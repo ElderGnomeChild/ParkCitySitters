@@ -1,0 +1,29 @@
+{% load static %}
+
+
+<html>
+    <head>
+        <title>Log in to Park City Sitters</title>
+        <link rel="stylesheet" href="{% static 'sit/login.css' %}">
+    </head>
+    <body>
+        <div id="image" class="leftbox">
+            <img class="leftbox" id="baby" src="{% static 'sit/images/adult-baby.jpg' %}">
+        </div>
+    <div id="welcome_box">
+        <div id="login_box">
+            <h1>Welcome back!</h1>
+            <h2>Log in</h2>
+            <form>
+                <input type="text" id="user" class="tbox" name="username" placeholder="username">
+                <br>
+                <input type="text" class="tbox" name="password" placeholder="password">
+                <br>
+            <input type="submit" class="submit" value="Continue">
+            </form>
+            <br><br>
+            <a href="https://www.google.com/">Forgot your password?</a>
+        </div>
+    </div>    
+    </body>
+</html>
