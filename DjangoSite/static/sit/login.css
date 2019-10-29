@@ -110,14 +110,14 @@ a {
     background-color: #FFB6AF;
 }
 
-a:hover{
-    color: #FFB6AF;
-}
+
 
 .submit:visited {
 background-color: #FF9388;
 }
-
+a:hover{
+    color: #FFB6AF;
+}
 /* a:visited {
     color: #FF9388;
 } */

@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add a Babysitter</title>
+        <link rel="stylesheet" href="{% static 'sit/addsitters.css' %}">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/sit" id="logout"><img src="{% static 'sit/images/logout.png' %}"></a>
+        </div>
+        <img class="topimg" src="{% static 'sit/images/biy.jpg' %}">
+        <div class="content">
+            <h2>New Babysitter Form</h2>
+            <form>
+                <span class="title-left" id="text-name">Name</span><br>
+                <input type="text" id="fname" class="tbox" name="first" placeholder="First name">
+                <input type="text" id="lname" class="tbox" name="last" placeholder="Last name"><br>
+                <span class="title-left" id="text-phone">Phone Number</span>
+                <span class="title-right" id="text-email">Email Address</span><br>
+                <input type="tel" id="pnumber" class="tbox" name="phone" placeholder="(123) 456-7890">
+                <input type="email" id="email" class="tbox" name="email" placeholder="info@contact.com"><br>
+                <span class="title-left" id="text-address">Address, city, state, zip code</span><br>
+                <input type="text" id="address" class="tbox" name="address" placeholder="Click to edit"><br>
+                <span class="title-left" id="text-dob">Date of Birth</span>
+                <span class="title-right" id="text-lang">Languages</span><br>
+                <input type="date" id="dob" class="tbox" name="dob" placeholder="mm/dd/yyyy">
+                <input type="text" id="lang" class="tbox" name="languages" placeholder="English, French, etc."><br>
+                <span class="title-left" id="text-experience">Experience (in years)</span><br>
+                <input type="number" id="exp" class="tbox" name="experience" placeholder="1">
+                <input type="checkbox" class="cbox" name="challenge" value=""> Experience with physically/mentally challenged children<br>
+                <span id="text-age">Age preference</span><br><br>
+
+
+                <label class="container">0-1 year old
+                    <input type="checkbox" class="cbox" name="0-1" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">2 years old
+                    <input type="checkbox" class="cbox" name="2" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">3 years old
+                    <input type="checkbox" class="cbox" name="3" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">4 years old
+                    <input type="checkbox" class="cbox" name="4" value="">
+                    <span class="checkmark"></span>
+                </label><br><br>
+                <label class="container">5 years old
+                    <input type="checkbox" class="cbox" name="5" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">6 years old
+                    <input type="checkbox" class="cbox" name="6" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">7 years old
+                    <input type="checkbox" class="cbox" name="7" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">8 years old
+                    <input type="checkbox" class="cbox" name="8" value="">
+                    <span class="checkmark"></span>
+                </label><br><br>
+                <label class="container">9 years old
+                    <input type="checkbox" class="cbox" name="9" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">10 years old
+                    <input type="checkbox" class="cbox" name="10" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">11 years old
+                    <input type="checkbox" class="cbox" name="11" value="">
+                    <span class="checkmark"></span>
+                </label>
+                <label class="container">12 years old
+                    <input type="checkbox" class="cbox" name="12" value="">
+                    <span class="checkmark"></span>
+                </label><br><br>
+
+                <!-- <input type="checkbox" class="cbox" name="0-1" value=""> 0-1 year old
+                <input type="checkbox" class="cbox" name="2" value=""> 2 years old
+                <input type="checkbox" class="cbox" name="3" value=""> 3 years old
+                <input type="checkbox" class="cbox" name="4" value=""> 4 years old<br>
+                <input type="checkbox" class="cbox" name="5" value=""> 5 years old
+                <input type="checkbox" class="cbox" name="6" value=""> 6 years old
+                <input type="checkbox" class="cbox" name="7" value=""> 7 years old
+                <input type="checkbox" class="cbox" name="8" value=""> 8 years old<br>
+                <input type="checkbox" class="cbox" name="9" value=""> 9 years old
+                <input type="checkbox" class="cbox" name="10" value=""> 10 years old
+                <input type="checkbox" class="cbox" name="11" value=""> 11 years old
+                <input type="checkbox" class="cbox" name="12" value=""> 12 years old<br> -->
+
+
+                <span class="title-left" id="text-upload">Upload documents</span><br><br>
+                <input type="file" class="title-left" id="fileinput" name="profile picture"> Profile Picture (200*200 pixels, jpg)<br>
+                <input type="file" class="title-left" id="fileinput" name="resume"> Resume<br>
+                <input type="submit" class="submit" value="Continue">
+
+
+            </form>
+        </div>
+        
+
+    </body>
+</html>

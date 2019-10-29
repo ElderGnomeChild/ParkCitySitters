@@ -9,3 +9,9 @@ def index(request):
     # template = loader.get_template("sit/login.html")
     # return HttpResponse(template.render())
     return render(request, 'sit/login.html')
+
+def addsitters(request):
+    return render(request, 'sit/addsitters.html')
+
+def addjob(request):
+    return render(request, 'sit/addjob.html')

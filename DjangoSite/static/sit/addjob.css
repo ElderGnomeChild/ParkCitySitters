@@ -1,0 +1,120 @@
+#logout {
+    position: absolute;
+    right: 50px;
+    top: 25px;
+}
+
+.header {
+    position: absolute;
+    width: 100vw;
+    height: 100px;
+    top:0;
+    left: 0;
+    background-color: #FF6F61;
+}
+
+.topimg {
+    position: absolute;
+    width:100vw;
+    left:0;
+    top:100px;
+}
+
+body {
+    font-family: raleway, sans-serif;
+}
+
+h2 {
+    font-size: 30;
+}
+.content {
+    position: relative;
+    text-align: center;
+    top:3.75in;
+    padding:10px;
+    width: 850px;
+    margin: auto;
+    /* background-color: #e0e0e0; */
+}
+
+
+.tbox {
+    border: 1px solid #39312C;
+    border-radius: 15px;
+    height: 70px;
+    width: 370px;
+    text-align: center;
+    font-size: 18;
+    margin:0 0 10px 0;
+}
+
+
+.title-left {
+    position: absolute;
+    /* text-align:left; */
+    left: 40px;
+}
+
+.title-right {
+    position: relative;
+    /* text-align:left; */
+    left: 85px;
+    margin: 0;
+}
+
+
+.tbox:focus {
+    border: 2px solid #FF6F61;
+}
+.tbox:focus::placeholder {
+    opacity: 0;
+}
+
+#fname, #pnumber, #dob, #chname{
+    margin-right:48px
+}
+
+.section-title {
+    margin:0;
+    text-align: left;
+    font-family: ralewayMedium;
+}
+
+#address {
+    width: 790px;
+}
+
+#fromdate, #fromtime, #todate, #totime{
+    width: 185px;
+}
+
+#bigbox {
+    width: 790px;
+    height: 200px;
+}
+
+.submit {
+    background-color:#FF6F61;
+    border: 0px solid black;
+    border-radius: 15px;
+    font-family: ralewaySemi, sans-serif;
+    color: white;
+    height: 3vw;
+    width: 15vw;
+    font-size:1vw;
+
+    position: relative;
+    /* text-align:left; */
+    left: 300px;
+    margin: 0;
+}
+
+.submit:hover{
+    background-color: #FFB6AF;
+}
+
+
+
+.submit:visited {
+background-color: #FF9388;
+}

@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add a Job</title>
+        <link rel="stylesheet" href="{% static 'sit/addjob.css' %}">
+        <link rel="stylesheet" href="{% static 'sit/fontstyle.css' %}">
+    </head>
+    <body>
+        <div class="header">
+            <a href="/sit" id="logout"><img src="{% static 'sit/images/logout.png' %}"></a>
+        </div>
+        <img class="topimg" src="{% static 'sit/images/boys.jpg' %}">
+
+        <div class="content">
+            <h2>Job Offer</h2>
+            <form>
+                <span class="section-title"><h3>Client's Contact Information</h3></span><br>
+                <span class="title-left" id="text-name">Name</span><br>
+                <input type="text" id="fname" class="tbox" name="first" placeholder="First name">
+                <input type="text" id="lname" class="tbox" name="last" placeholder="Last name"><br>
+                <span class="title-left" id="text-phone">Phone Number</span>
+                <span class="title-right" id="text-email">Email Address</span><br>
+                <input type="tel" id="pnumber" class="tbox" name="phone" placeholder="(123) 456-7890">
+                <input type="email" id="email" class="tbox" name="email" placeholder="info@contact.com"><br><br>
+                <span class="section-title"><h3>Booking Information</h3></span><br>
+                <span class="title-left" id="text-address">Hotel or Venue Address</span><br>
+                <input type="text" id="address" class="tbox" name="address" placeholder="Click to edit"><br>
+                <span class="title-left">From</span>
+                <span class="title-right">To</span><br>
+                <input type="date" id="fromdate" class="tbox" name="fromdate" placeholder="mm/dd/yyyy">
+                <input type="time" id="fromtime" class="tbox" name="fromtime" placeholder="HH:MM am/pm" style="margin-right: 35px">
+                <input type="date" id="fromdate" class="tbox" name="fromdate" placeholder="mm/dd/yyyy">
+                <input type="time" id="fromtime" class="tbox" name="fromtime" placeholder="HH:MM am/pm">
+                <span class="section-title"><h3>Children</h3></span><br>
+                <span class="title-left" id="text-name">Child 1</span><br>
+                <input type="text" id="chname" class="tbox" name="chfirst" placeholder="First name">
+                <input type="number" id="age" class="tbox" name="age" placeholder="Age"><br>
+                <span class="title-left" id="text-name">Child 2</span><br>
+                <input type="text" id="chname" class="tbox" name="chfirst" placeholder="First name">
+                <input type="number" id="age" class="tbox" name="age" placeholder="Age"><br>
+                <span class="title-left" id="text-name">Important details to know</span><br>
+                <input type="text" id="bigbox" class="tbox" name="bigbox" placeholder="Click to Edit">
+
+                <input type="submit" class="submit" value="Next">
+                
+            </form>
+        </div>
+    </body>
+</html>
