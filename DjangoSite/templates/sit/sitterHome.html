@@ -1,0 +1,51 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Babysitter Homepage</title>
+        <link rel= "stylesheet" href ="{% static 'sit/sitterHome.css' %}">
+    </head>
+    <body>
+        <div id= "header" >
+        <a href= "http://cs.westminstercollege.edu/pcs/sit/"><img id= "logoutImg" src= "{% static 'sit/images/logout.png' %}"></a> 
+        </div>
+        <div id= "logo">
+            <img id= "logo_pic" src="{% static 'sit/images/th.jpg' %}" alt= "Picture of the logo">
+        </div>
+
+        <div id= "profile_picture">
+            <img id= "profile"  src= "{% static 'sit/images/roster_pic.jpg' %}" alt="profile picture">
+        </div>
+
+        <div id= "Hello_name">
+            <h2>Hello sitter.id</h2>
+        </div>
+
+        <div id= "Pending_job" class= "job_box">
+            <div id= "PJbox">
+                <span class= box_text>Bob & Joe</span> 
+                <span class= sub_text> October 31, 2019</span> 
+            </div>
+            <h4> Pending job offers available for you</h4>
+        </div>
+
+        <div id= "Accepted_job" class= "job_box">
+            <div id= "AJbox">
+                <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture">
+                <span class= box_text> Bob & Joe</span>
+                <span class= sub_text> October 31, 2019</span> 
+            </div>
+            <h4>Accepted job offers</h4>
+        </div>
+
+        <div id= "Past_job" class= "job_box">
+            <div id= "PaJbox">
+                    <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture"> 
+                    <span class= box_text> Bob & Joe</span>  
+                    <span class= sub_text> October 31, 2019</span> 
+            </div>
+            <h4>Past jobs</h4>
+        </div>
+    </body>
+</html>

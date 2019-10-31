@@ -1,0 +1,280 @@
+@font-face {
+    font-family: raleway;
+    /* font-style: normal; */
+    /* font-weight: 400; */
+    src: url('fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: ralewayBold;
+    /* font-style: normal; */
+    /* font-weight: 700; */
+    src: url('fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+    font-family: ralewayMedium;
+    /* font-style: normal; */
+    /* font-weight: 500; */
+    src: url('fonts/Raleway-Medium.ttf');
+}
+
+@font-face {
+    font-family: ralewaySemi;
+    /* font-style: normal; */
+    /* font-weight: 600; */
+    src: url('fonts/Raleway-SemiBold.ttf');
+}
+#header{
+    position:absolute;
+    background-color: #ff6f61;
+    left:0px;
+    top:0px;
+    height:100px;
+    width:1920px;
+    text-align:right;
+}
+.back_login{
+    position:absolute;
+    width:40.44px;
+    height:49.08px;
+    right:50px;
+    top:25px;
+}
+.box{
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    top: 10px;
+    left:50px;
+
+}
+#back_button{
+    position: absolute;
+    font-family: ralewaySemi, sans-serif;
+    font-size:18;
+    top:164px;
+    left:98px;
+}
+#profile_title{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 35;
+    top:205px;
+    left:140px;
+    
+}
+.leftbox {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: 140px;
+    left: 70px;
+}
+
+
+#profile_name> h1{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 35;
+    top: 335px;
+    left: 370px;
+}
+#profile_name> p{
+    position: absolute;
+    font-family: ralewayMedium, sans-serif;
+    font-size: 18;
+    top: 376px;
+    left: 370px;
+}
+#profile_information_title{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 24;
+    top: 508px;
+    left: 192px;
+    width:4in;
+
+
+}
+.text{
+    position: absolute;
+    font-family: ralewayMedium, sans-serif;
+    font-size: 18;
+    left:200px;
+}
+#profile_information_text>p{
+    position: absolute;
+    font-family: raleway, sans-serif;
+    font-size: 12;
+    top:720px;
+    left:205px;
+}
+#link_resume{
+    position: absolute;
+    font-family: ralewaySemi, sans-serif;
+    background-color: #ff6f61;
+    top:800px;
+    left:260px;
+    border-radius:15px;
+    width: 220px;
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+
+    
+}
+#link_edit{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 18;
+    top: 900px;
+    left: 354px;
+    color:#EDAA86;
+    text-decoration: none;
+
+}
+a:visited{
+    color:#EDAA86;
+    text-decoration: none;
+
+}
+a{
+    color:#EDAA86;
+    text-decoration: none;
+
+}
+#Accepted_job{
+
+    position: absolute;
+
+    height: 30vh;
+
+    width: 100vw;
+
+    top: 33vh;
+
+    padding-left: 2vw;
+
+    left:90vh;
+
+}
+#Past_job{
+
+    position: absolute;
+
+    height: 15vh;
+
+    width: 100vw;
+
+    top: 65vh;
+
+    padding-left: 2vw;
+    
+    left:90vh;
+}
+#sizeOfh4{
+    font-family: railwayBold, sans-serif;
+    font-size:30px;
+}
+
+#AJbox {
+
+    position: absolute;
+    
+    font-family: railwayBold, sans-serif;
+    
+    text-align: center;
+    
+    top: 80px;
+    
+    left: 75px;
+    
+    border-radius: 30px;
+    
+    height: 200px;
+    
+    width: 200px;
+    
+    box-shadow: 5px 5px 5px 5px #e6e6e6;
+    
+    background-color: #FF6F61;
+    
+    text-decoration-color: black;
+}    
+    
+    
+    
+#AJbox:hover {
+    
+    background-color: black;
+    
+    color: #ffb6af;
+    
+}
+    
+    
+    
+#PaJbox {
+    
+    position: absolute;
+    
+    top: 80px;
+    
+    left: 75px;
+    
+    border-radius: 30px;
+    
+    height: 200px;
+    
+    width: 200px;
+    
+    box-shadow: 5px 5px 5px 5px #e6e6e6;
+    
+    color: #ffffff;
+    
+        background-color: black;
+    
+    }
+    
+    
+    
+#PaJbox:hover {
+    
+    background-color: #ffffff;
+    
+    color: black;
+    
+}
+.box_text {
+
+    position: absolute;
+    
+    font-family: railwayBold, sans-serif;
+
+    font-size: 24px;
+    
+    bottom: 20%;
+    
+    left: 15px;
+    
+}
+    
+    
+    
+.sub_text {
+    
+    position: absolute;
+    
+    font-family: railwaySemi, sans-serif;
+    
+    font-size: 18px;
+    
+    bottom: 10%;
+    
+    left: 15px;
+    
+}
+    

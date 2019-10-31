@@ -1,0 +1,61 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Babysitter Homepage</title>
+        <link rel= "stylesheet" href ="{% static 'sit/adminHome.css' %}">
+    </head>
+    <body>
+            <div id= "header" >
+                    <a href= "http://cs.westminstercollege.edu/pcs/sit/"><img id= "logoutImg" src= "{% static 'sit/images/logout.png' %}"></a> 
+            </div>
+        <div id= "logo">
+            <img id= "logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder = "Picture of the logo">
+        </div>
+
+        <div id= "Hello_name">
+            <h2>Hello, Rachel</h2>
+        </div>
+
+        <div id= "Pending_job" class= "job_box">
+             <div id= "PJbox">
+                    <span class= box_text>Bob & Joe</span> 
+                    <span class= sub_text> October 31, 2019</span> 
+             </div>
+             <div id= "add_new_job">
+                <a href="http://cs.westminstercollege.edu/pcs/sit/addjob"><img id= "new_job" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>
+             </div>
+            <h4> Pending job offers</h4>
+        </div>
+
+        <div id= "Accepted_job" class= "job_box">
+            <div id= "AJbox">
+                    <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture">
+                    <span class= box_text> Bob & Joe</span>
+                    <span class= sub_text> October 31, 2019</span> 
+           </div>
+            <h4>Accepted job offers</h4>
+        </div>
+        
+        <div id= "Past_job" class= "job_box">
+             <div id= "PaJbox">
+                    <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture"> 
+                    <span class= box_text> Bob & Joe</span>  
+                    <span class= sub_text> October 31, 2019</span> 
+            </div>
+            <h4>Past job offers</h4>
+        </div>
+
+        <div id= "babysitters" class= "sitters">
+            <div id= "the_sitters">
+                <a href="http://cs.westminstercollege.edu/pcs/sit/profile"><img id= "look_at_me" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile pictures of the sitters"></a>
+                <span class= name>Name_here</span>
+            </div>
+            <div id= "add_new_sitter">
+                <a href="http://cs.westminstercollege.edu/pcs/sit/addsitters"><img id= "add_sitter" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>
+            </div>
+            <h4> Babysitters</h4>
+        </div>
+    </body>
+</html>

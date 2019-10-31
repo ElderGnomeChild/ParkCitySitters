@@ -1,0 +1,213 @@
+@font-face {
+    font-family: raleway, sans-serif;
+     font-style: normal; 
+     font-weight: 400; 
+    src: url('fonts/Raleway-Regular.ttf');
+}
+
+@font-face {
+    font-family: ralewayBold, sans-serif;
+     font-style: normal; 
+     font-weight: 700; 
+    src: url('fonts/Raleway-Bold.ttf');
+}
+
+@font-face {
+    font-family: ralewayMedium, sans-serif;
+     font-style: normal; 
+     font-weight: 500; 
+    src: url('fonts/Raleway-Medium.ttf');
+}
+
+@font-face {
+    font-family: ralewaySemi, sans-serif;
+     font-style: normal; 
+     font-weight: 600; 
+    src: url('fonts/Raleway-SemiBold.ttf');
+}
+
+body{
+    font-family: raleway, sans-serif;
+}
+
+#logo_pic{
+    position: absolute;
+    left: 30px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#profile{
+    position: absolute;
+    right: 40px;
+    height: 50px;
+    top: 60px;
+    border-radius: 50%;
+}
+
+#header{
+    position: absolute;
+    background-color: #FF6F61;
+    left: 0px;
+    top: 0px;
+    height: 50px;
+    width: 100vw;
+    text-align: right;
+}
+
+#Hello_name{
+    position: absolute;
+    top: 7vh;
+}
+
+#Pending_job{
+    position: absolute;
+    height: 30vh;
+    width: 100vw;
+    top: 15vh;
+    padding-left: 2vw;
+}
+
+#Accepted_job{
+    position: absolute;
+    height: 30vh;
+    width: 100vw;
+    top: 40vh;
+    padding-left: 2vw;
+}
+
+#Past_job{
+    position: absolute;
+    height: 15vh;
+    width: 100vw;
+    top: 65vh;
+    padding-left: 2vw;
+}
+
+#logoutImg {
+    position: absolute;
+    height: 25px;
+    width: 25px;
+    top: 10px;
+    right: 10px;
+}
+
+#PJbox {
+    position: absolute;
+    font-family: railwayBold, sans-serif;
+    top: 60px;
+    left: 170px;
+    border-radius: 25px;
+    height: 135px;
+    width: 135px;
+    box-shadow: 5px 5px 5px 5px #e6e6e6;
+    color: #FF6F61;
+    text-align: center;
+}
+
+#PJbox:hover{
+    background-color: #FFB6AF;
+    color: #ffffff;
+}
+
+#new_job {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    border-radius: 25px;
+    height: 135px;
+    width: 135px;
+    box-shadow: 5px 5px 5px 5px #e6e6e6;
+}
+
+#AJbox {
+    position: absolute;
+    font-family: railwayBold, sans-serif;
+    text-align: center;
+    top: 60px;
+    left: 20px;
+    border-radius: 25px;
+    height: 135px;
+    width: 135px;
+    box-shadow: 5px 5px 5px 5px #e6e6e6;
+    background-color: #FF6F61;
+    text-decoration-color: black;
+}
+
+#AJbox:hover {
+    background-color: black;
+    color: #ffb6af;
+}
+
+#PaJbox {
+    position: absolute;
+    top: 60px;
+    left: 20px;
+    border-radius: 25px;
+    height: 135px;
+    width: 135px;
+    box-shadow: 5px 5px 5px 5px #e6e6e6;
+    color: #ffffff;
+    background-color: black;
+}
+
+#PaJbox:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+#babysitters{
+    position: absolute;
+    height: 15vh;
+    width: 100vw;
+    top: 90vh;
+    padding-left: 2vw;
+}
+
+#add_sitter {
+    position: absolute;
+    height: 135px;
+    top: 50px;
+    left: 20px;
+    border-radius: 50%;
+}
+
+#icon {
+    position: absolute;
+    right: -10px;
+    height: 40px;
+    top: -10px;
+    border-radius: 50%;
+}
+
+.box_text {
+    position: absolute;
+    font-family: railwayBold, sans-serif;
+    font-size: 16px;
+    bottom: 20%;
+    left: 15px;
+}
+
+.sub_text {
+    position: absolute;
+    font-family: railwaySemi, sans-serif;
+    font-size: 12px;
+    bottom: 10%;
+    left: 15px;
+}
+
+#look_at_me {
+    position: absolute;
+    height: 135px;
+    top: 50px;
+    left: 170px;
+    border-radius: 50%;
+}
+
+.name {
+    position: absolute;
+    bottom: -90px;
+    padding-left: 170px;
+    font-family: railwaySemi, sans-serif;
+    font-size: 12px;
+}

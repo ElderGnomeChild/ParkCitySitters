@@ -15,3 +15,12 @@ def addsitters(request):
 
 def addjob(request):
     return render(request, 'sit/addjob.html')
+
+def adminHome(request):
+    return render(request, 'sit/adminHome.html')
+
+def profiles(request):
+    return render(request,'sit/profiles.html')
+
+def sitterHome(request):
+    return render(request, 'sit/sitterHome.html')
