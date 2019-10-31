@@ -61,7 +61,7 @@
     position: absolute;
     font-family: ralewayBold, sans-serif;
     font-size: 35;
-    top:205px;
+    top:140px;
     left:140px;
     
 }
@@ -109,14 +109,14 @@
     position: absolute;
     font-family: raleway, sans-serif;
     font-size: 12;
-    top:720px;
+    top:847px;
     left:205px;
 }
 #link_resume{
     position: absolute;
     font-family: ralewaySemi, sans-serif;
     background-color: #ff6f61;
-    top:800px;
+    top:900px;
     left:260px;
     border-radius:15px;
     width: 220px;
@@ -130,7 +130,7 @@
     position: absolute;
     font-family: ralewayBold, sans-serif;
     font-size: 18;
-    top: 900px;
+    top: 980px;
     left: 354px;
     color:#EDAA86;
     text-decoration: none;
