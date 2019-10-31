@@ -135,7 +135,7 @@ body{
 }
 
 #AJbox:hover {
-    background-color: black;
+    background-color: #39312c;
     color: #ffb6af;
 }
 
@@ -148,7 +148,7 @@ body{
     width: 135px;
     box-shadow: 5px 5px 5px 5px #e6e6e6;
     color: #ffffff;
-    background-color: black;
+    background-color: #39312c;
 }
 
 #PaJbox:hover {
