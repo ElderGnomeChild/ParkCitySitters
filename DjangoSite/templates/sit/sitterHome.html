@@ -7,6 +7,7 @@
         <link rel= "stylesheet" href ="{% static 'sit/sitterHome.css' %}">
     </head>
     <body>
+    <div id ="whole">
         <div id= "header" >
         <a href= "http://cs.westminstercollege.edu/pcs/sit/"><img id= "logoutImg" src= "{% static 'sit/images/logout.png' %}"></a> 
         </div>
@@ -23,7 +24,7 @@
         </div>
 
         <div id= "Pending_job" class= "job_box">
-            <div id= "PJbox">
+            <div id= "PJbox"  onclick="hideElem()">
                 <span class= box_text>Bob & Joe</span> 
                 <span class= sub_text> October 31, 2019</span> 
             </div>
@@ -47,5 +48,62 @@
             </div>
             <h4>Past jobs</h4>
         </div>
+    </div>
+    <div id="profile_information_title" class = "hidden" >
+            <div id ="title">
+                <p> Job Offer</p>
+                <img class = "back_login" src = "{% static 'sit/images/logout.png' %}" onclick="exit()"></a>
+            </div>
+            <div id ="read">
+                <p>Tyler,Wyatt,Cathalina,Soraya & Jayda</p>
+            </div>
+            
+            
+            <ul id = "profile" >           
+            
+                <li >Name <span class = "text1">Anne Dupont</span></li>
+                <br>
+                <li >Email <span class = "text1">anne.dupont@gmail.com</span></li>
+                <br>
+                <li >Hotel or venue address <span class = "text1">Hotel Park City</span></li>
+                <br>
+                <li >From <span class = "text1">Thursday,October 16 - 11AM</span></li>
+                <br>
+                <li >To <span class = "text1">Thursday,October 16 - 11AM</span></li>
+                <br>
+                <li >Children <span class = "text1">Lisa 3 years old<br> Weston 5 years old</span></li>
+                <br>
+                <li >Important details yo know <span class = "text1">None</span></li>
+                <br>
+
+        
+        </ul>
+            
+                <input type="submit" class="submit1" value="Submit"onclick = "exit()" >
+            </a>
+        
+
+        </div>
+        
+        
+        <script>
+            function exit() {
+              document.getElementById("profile_information_title").classList.add("hidden"); 
+              document.getElementById("whole").classList.remove("background"); 
+                }
+            function hideElem() {
+              document.getElementById("profile_information_title").classList.remove("hidden"); 
+              document.getElementById("whole").classList.add("background"); 
+                }
+            function hidElem() {
+              document.getElementById("error").classList.add("hidden"); 
+              document.getElementById("whole").classList.remove("background"); 
+                }
+            
+            
+            
+            
+            
+            </script>
     </body>
 </html>

@@ -169,3 +169,98 @@ body{
     bottom: 10%;
     left: 15px;
 }
+
+.submit1:hover{
+    background-color: #FFB6AF;
+}
+
+.submit1 {
+    background-color:#FF6F61;
+    border: 0px solid black;
+    border-radius: 15px;
+    font-family: ralewaySemi, sans-serif;
+    color: white;
+    height: 60px;
+    width: 220px;
+    font-size:18px;
+    top: 550px;
+    left:300px;
+
+    position: relative;
+    /* text-align:left; */
+    margin: 0;
+}
+
+.submit1:visited {
+background-color: #FF9388;
+}
+
+.hidden{
+    display:none;
+}
+.background {     
+
+    -webkit-filter: blur(20px);     
+    
+    filter: blur(20px);      
+    
+    }
+#profile_information_title{
+    position: absolute;
+    
+    top: 212px;
+    left:513px;
+    height:654px;
+    width: 894px;
+    border-radius: 30px;
+    background-color:white;
+    
+}
+.back_login{
+    position:absolute;
+    width:40.44px;
+    height:49.08px;
+    right:50px;
+    top:25px;
+}
+#profile{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 18px;
+    top:200px;
+    left:120px;
+    
+}
+
+.text1{
+    position: absolute;
+    font-family: ralewayMedium, sans-serif;
+    font-size: 18px;
+    left:400px;
+    width:600px;
+}
+
+
+#title{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 35px;
+    color:white;
+    background-color: #FF6F61;
+    width:894px;
+    height:90px;
+    text-align: center;
+    border-radius: 15px;
+    
+
+}
+#read{
+    position: absolute;
+    font-family: ralewayBold, sans-serif;
+    font-size: 24px;
+    height:20px;
+    width:594px;
+    top:100px;
+    left:180px;
+
+}
