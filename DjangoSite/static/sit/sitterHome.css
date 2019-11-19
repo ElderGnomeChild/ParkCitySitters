@@ -26,6 +26,11 @@
     src: url('fonts/Raleway-SemiBold.ttf');
 }
 
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  }
+
 body{
     font-family: raleway, sans-serif;
 }
@@ -34,54 +39,53 @@ body{
     position: absolute;
     left: 30px;
     height: 40px;
-    border-radius: 50%;
+    border-radius: 25px;
 }
 
 #profile{
     position: absolute;
-    right: 40px;
+    right: 50px;
     height: 50px;
-    top: 60px;
+    top: 105px;
     border-radius: 50%;
 }
 
 #header{
     position: absolute;
+    width: 100%;
+    height: 100px;
+    top:0;
+    left: 0;
     background-color: #FF6F61;
-    left: 0px;
-    top: 0px;
-    height: 50px;
-    width: 100vw;
-    text-align: right;
 }
 
 #Hello_name{
     position: absolute;
-    top: 10vh;
+    top: 85px;
 }
 
 #Pending_job{
     position: absolute;
-    height: 30vh;
-    width: 100vw;
-    top: 20vh;
-    padding-left: 2vw;
+    height: 100px;
+    width: 100%;
+    top: 120px;
+    padding-left: 20px;
 }
 
 #Accepted_job{
     position: absolute;
-    height: 30vh;
-    width: 100vw;
-    top: 45vh;
-    padding-left: 2vw;
+    height: 100px;
+    width: 100%;
+    top: 300px;
+    padding-left: 20px;
 }
 
 #Past_job{
     position: absolute;
-    height: 15vh;
-    width: 100vw;
-    top: 70vh;
-    padding-left: 2vw;
+    height: 100px;
+    width: 100%;
+    top: 480px;
+    padding-left: 20px;
 }
 
 #logoutImg {
@@ -262,5 +266,82 @@ background-color: #FF9388;
     width:594px;
     top:100px;
     left:180px;
+
+}
+
+@media only screen and (max-width: 600px){
+    #Hello_name{
+        position: absolute;
+        right: 30%;
+        text-align: center;
+        top: 100px; 
+    }
+
+    #logo_pic {
+        height: 100px;
+        left: 40%;
+        top: 0px;
+    }
+
+    #Pending_job {
+        top: 200px;
+        height: 500px;
+    }
+
+    #PJbox{
+        height: 150px;
+    }
+
+    #AJbox{
+        height: 150px;
+    }
+
+    #PAJbox{
+        height: 150px;
+    }
+
+    #Accepted_job{
+        top: 710px;
+        height: 310px;
+    }
+
+    #Past_job{
+        top: 1020px;
+        height: 310px; 
+    }
+
+    #babysitters{
+        top: 1350px;
+        height: 600px;
+    }
+
+    #look_at_me {
+        height: 150px;
+        padding: 5px;
+    }
+
+    .box_text{
+        font-size: 12px;
+    }
+
+    .sub_text{
+        font-size: 10px;
+    }
+
+    #icon{
+        height: 50px;
+    }
+
+    #add_sitter{
+        height: 150px;
+    }
+
+    #new_job{
+        height: 150px;
+    }
+
+    #logo_pic{
+        right: 40%;
+    }
 
 }

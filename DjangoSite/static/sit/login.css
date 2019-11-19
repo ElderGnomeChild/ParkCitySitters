@@ -26,6 +26,11 @@
     src: url('fonts/Raleway-SemiBold.ttf');
 }
 
+@viewport {
+    width: device-width ;
+    zoom: 1.0 ;
+  }
+
 body{
     font-family: raleway, sans-serif;
     background-color: #FFFFFF;
@@ -33,7 +38,7 @@ body{
 
 a {
     color: #FF6F61;
-    font-size: 1vw;
+    font-size: 16px;
     text-decoration: none;
 }
 
@@ -41,8 +46,8 @@ a {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100vh;
-    height: 100vh;
+    width: 50%;
+    height: 100%;
 }
 
 #baby {
@@ -51,6 +56,7 @@ a {
     opacity: 0.7;
     top:0;
     left:0;
+    width: 100%;
 }
 
 #image {
@@ -58,7 +64,6 @@ a {
 }
 
 #welcome_box{
-    background-color: #78aa41;
     text-align: center;
     position: absolute;
     left: 100vh;
@@ -135,3 +140,70 @@ h2 {
 /* #707070 */
 /* #cdcbca */
 /* #9b9795 */
+
+@media only screen and (max-width: 600px){
+    .leftbox {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 146px;
+    }
+
+    #baby {
+        position: absolute;
+        object-fit: cover;
+        opacity: 0.7;
+        top:0;
+        left:0;
+        width: 100%;
+        height: 146px;
+    }
+
+    #welcome_box{
+        text-align: center;
+        position: absolute;
+        left: 17%;
+        top: 150px;
+        height: 327px;
+        width: 325px;
+        object-fit: cover;
+    }
+
+    #login_box {
+        position: absolute;
+        text-align: center;
+        padding: 20px 25px;
+    }
+
+    .tbox {
+        height: 50px;
+        width: 325px;
+        margin: 0px 0px 10px 0px;
+    }
+
+    .continue_box{
+        margin: 25px 0px 0px 0px;
+    }
+
+    .submit {
+        height: 50px;
+        width: 325px;
+    }
+
+    .tbox{
+        font-size: 12px;
+    }
+
+    .submit{
+        font-size: 12px;
+    }
+
+    h1{
+        font-size: 24px;
+    }
+
+    h2{
+        font-size: 20px;
+    }
+}
