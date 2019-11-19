@@ -5,9 +5,10 @@
     <head>
         <title>Add a Job</title>
         <link rel="stylesheet" href="{% static 'sit/addjob.css' %}">
-        <link rel="stylesheet" href="{% static 'sit/fontstyle.css' %}">
+        
     </head>
     <body>
+    <div id ="whole">
         <div class="header">
             <a href="http://cs.westminstercollege.edu/pcs/sit/" id="logout"><img src="{% static 'sit/images/logout.png' %}"></a>
         </div>
@@ -43,9 +44,110 @@
                 <span class="title-left" id="text-name">Important details to know</span><br>
                 <input type="text" id="bigbox" class="tbox" name="bigbox" placeholder="Click to Edit">
 
-                <input type="submit" class="submit" value="Next">
+                
+                <button class = "submit" type="button" onclick="hideElem()">Next</button>
                 
             </form>
         </div>
+    </div>
+        <div id="profile_information_title" class = "hidden" >
+            <div id ="title">
+                <p> Job Offer</p>
+                <img class = "back_login" src = "{% static 'sit/images/logout.png' %}" onclick="exit()"></a>
+            </div>
+            <div id ="read">
+                <p>Please review all the information before submitting</p>
+            </div>
+           
+            
+            <ul id = "profile" style="list-style-type:square;">          
+            
+            <li >Name <span class = "text1">Anne Dupont</span></li>
+            <br>
+            <li >Email <span class = "text1">anne.dupont@gmail.com</span></li>
+            <br>
+            <li >Hotel or venue address <span class = "text1">Hotel Park City</span></li>
+                <br>
+            <li >From <span class = "text1">Thursday,October 16 - 11AM</span></li>
+            <br>
+            <li >To <span class = "text1">Thursday,October 16 - 11AM</span></li>
+            <br>
+            <li >Children <span class = "text1">Lisa 3 years old<br> Weston 5 years old</span></li>
+            <br>
+            <li >Important details yo know <span class = "text1">None</span></li>
+            <br>
+        
+            <p >Experience with Physically/Mentally Challenged children</p>
+        </ul>
+            
+        <input type="submit" class="submit1" value="Submit" onclick="success()">
+            </a>
+        
+
+        </div>
+        <div id="congratulations" class = "hidden" >
+                <div id ="title">
+                    <p> Congratulations!</p>
+            
+                </div>
+                
+                <div id="image" class="leftbox1">
+                    <img class="leftbox1" id="sitters" src="{% static 'sit/images/profiles.jpg' %}">
+                </div>
+                <div id ="seten">
+                <p>Your new joboffer has been successfully created</p>
+            </div>
+                <input type="submit" class="submit1" value="Go to homepage" onclick="error()">
+                </a>
+            
+    
+            </div>
+            <div id="error" class = "hidden" >
+                    <div id ="title">
+                        <p> Warning</p>
+                
+                    </div>
+                    
+                    <div id="image" class="leftbox1">
+                        <img class="leftbox1" id="sitters" src="{% static 'sit/images/profiles.jpg' %}">
+                    </div>
+                    <div id ="seten">
+                    <p>Something went wrong and your job offer has not been created</p>
+                </div>
+                    <input type="submit" class="submit1" value="ok" onclick="hidElem()">
+                    </a>
+                
+        
+                </div>
+        
+        <script>
+            function exit() {
+              document.getElementById("profile_information_title").classList.add("hidden"); 
+              document.getElementById("whole").classList.remove("background"); 
+                }
+            function hideElem() {
+              document.getElementById("profile_information_title").classList.remove("hidden"); 
+              document.getElementById("whole").classList.add("background"); 
+                }
+            function hidElem() {
+              document.getElementById("error").classList.add("hidden"); 
+              document.getElementById("whole").classList.remove("background"); 
+                }
+            function success() {
+              document.getElementById("congratulations").classList.remove("hidden"); 
+              document.getElementById("profile_information_title").classList.add("hidden");
+              document.getElementById("whole").classList.add("background"); 
+                }
+             function error() {
+              document.getElementById("error").classList.remove("hidden"); 
+              document.getElementById("congratulations").classList.add("hidden"); 
+              document.getElementById("profile_information_title").classList.add("hidden");
+               
+                }
+            
+            
+            
+            
+            </script>
     </body>
 </html>
