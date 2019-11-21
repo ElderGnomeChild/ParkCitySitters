@@ -1,0 +1,9 @@
+{% if sit_list %}
+    <ul>
+    {% for sitter in sit_list %}
+        <li><a href="/profile/{{ sitter.id }}">{{ sitter }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No sitters are available.</p>
+{% endif %}

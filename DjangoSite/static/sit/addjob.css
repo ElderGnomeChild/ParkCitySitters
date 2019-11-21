@@ -283,3 +283,10 @@ background-color: #FF9388;
     left:180px;
 
 }
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}

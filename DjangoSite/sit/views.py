@@ -60,3 +60,23 @@ def addClient(request):
         form = ClientForm()
         
         return render(request, 'sit/clientForm.html', {'form':form})
+
+def seeSitters(request):
+    sit_list= Babysitter.objects.order_by('id')
+    context= {'sit_list':sit_list}
+    return render(request, 'sit/sitters.html', context)
+
+def pastJobs(request):
+    job_list= Job.objects.order_by('id')
+    context= {'job_list':job_list}
+    return render(request, 'sit/pastJobs.html', context)
+
+def acceptedJobs(request):
+    job_list= Job.objects.order_by('id')
+    context= {'job_list':job_list}
+    return render(request, 'sit/acceptedJobs.html', context)
+
+def pendingJobs(request):
+    job_list= Job.objects.order_by('id')
+    context= {'job_list':job_list}
+    return render(request, 'sit/pendingJobs.html', context)

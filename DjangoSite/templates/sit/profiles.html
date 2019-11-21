@@ -133,7 +133,7 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <ul>
-                    {{now}}
+                    
                     {% for job in jobs %}
                     {% if job.sitter == sitter and not job.is_old_job %}
                     <li><a href="/{{job.id}}">{{job}}<br>{{job.datetime_start}} to {{job.datetime_end}}</a></li>
@@ -179,7 +179,7 @@
             <div class="modal-content1">
                 <span class="close1">&times;</span>
                 <ul>
-                    {{now}}
+                    
                     {% for job in jobs %}
                     {% if job.sitter == sitter and job.is_old_job %}
                     <li><a href="/{{job.id}}">{{job}}<br>{{job.datetime_start}} to {{job.datetime_end}}</a></li>

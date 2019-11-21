@@ -1,0 +1,11 @@
+{% if job_list %}
+    <ul>
+    {% for job in job_list %}
+    {% if not job.is_old_job and job.sitter%}
+        <li><a href="/{{ job.id }}">{{ job }}</a></li>
+    {% endif %}
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobs are available.</p>
+{% endif %}

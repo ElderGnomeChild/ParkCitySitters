@@ -14,6 +14,10 @@ urlpatterns = [
 
     path('<int:job_id>', views.showJobTest, name="seeJob"),
     path('jobs', views.seeJobsTest, name="seeJobs"),
-    path('clientform', views.addClient, name="newClient")
+    path('clientform', views.addClient, name="newClient"),
+    path('sitters', views.seeSitters, name="sitters"),
+    path('past', views.pastJobs, name="past"),
+    path('accepted', views.acceptedJobs, name="accepted"),
+    path('pending', views.pendingJobs, name="pending"),
 ]
 # urlpatterns += staticfiles_urlpatterns()
