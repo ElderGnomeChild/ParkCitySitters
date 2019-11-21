@@ -141,7 +141,7 @@ h2 {
 /* #cdcbca */
 /* #9b9795 */
 
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1000px){
     .leftbox {
         position: absolute;
         top: 0;

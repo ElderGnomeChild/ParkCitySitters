@@ -269,7 +269,7 @@ background-color: #FF9388;
 
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 10000px){
     #Hello_name{
         position: absolute;
         right: 30%;

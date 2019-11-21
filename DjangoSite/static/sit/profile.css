@@ -281,7 +281,7 @@ a{
     
 }
     
-@media only screen and (max-width: 800px){
+@media only screen and (max-width: 1000px){
     #profile_information_title{
         position: absolute;
         height: 315px;
