@@ -8,7 +8,7 @@
     </head>
     <body>
             <div id= "header" >
-                    <a href= "/"><img id= "logoutImg" src= "{% static 'sit/images/logout.png' %}"></a> 
+                    <a href= "/" id="logoutImg">Log Out</a> 
             </div>
         <div id= "logo">
             <img id= "logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder = "Picture of the logo">
@@ -24,7 +24,7 @@
                     <span class= sub_text> October 31, 2019</span> 
              </div>
              <div id= "add_new_job">
-                <a href="http://cs.westminstercollege.edu/pcs/sit/addjob"><img id= "new_job" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>
+                <a href="/addjob"><img id= "new_job" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>
              </div>
             <h4> Pending job offers</h4>
         </div>
@@ -49,8 +49,8 @@
 
         <div id= "babysitters" class= "sitters">
             <div id= "the_sitters">
-                <a href="http://cs.westminstercollege.edu/pcs/sit/profile"><img id= "look_at_me" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile pictures of the sitters"></a>
-                <span class= name>Name_here</span>
+                <a href="/profile/1"><img id= "look_at_me" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile pictures of the sitters"></a>
+                <span class= name>See sitters</span>
             </div>
             <div id= "add_new_sitter">
                 <a href="http://cs.westminstercollege.edu/pcs/sit/addsitters"><img id= "add_sitter" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>

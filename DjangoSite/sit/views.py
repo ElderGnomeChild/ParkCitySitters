@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.template import Context, loader
 from .models import Job, Child, Babysitter
+import datetime
 
 # Create your views here.
 
@@ -22,9 +23,11 @@ def adminHome(request):
 
 def profiles(request, sitter_id):
     sitter = get_object_or_404(Babysitter, pk=sitter_id)
+    jobs = Job.objects.all()
     langs = sitter.babysitter_languages.all()
+    now = datetime.datetime.now()
     # jobs = Job.objects.get(sitter=sitter)
-    return render(request, 'sit/profiles.html', {'sitter':sitter, 'langs':langs})
+    return render(request, 'sit/profiles.html', {'sitter':sitter, 'langs':langs, 'jobs':jobs, 'now':now})
 
 def sitterHome(request):
     return render(request, 'sit/sitterHome.html')

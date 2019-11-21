@@ -1,6 +1,8 @@
 from django.db import models
 from django.apps import apps
 from django.contrib.auth.models import AbstractUser
+import datetime
+from django.utils import timezone
 # from users.models import Babysitter
 # Create your models here.
 
@@ -71,5 +73,14 @@ class Job (models.Model):
 
     def __str__(self):
         return self.client.client_name + " at " +self.location
+
+    @property
+    def is_old_job(self):
+        now = timezone.now()
+        # print(now)
+        # print(self.datetime_end)
+        return now > self.datetime_end
+
+
 
     

@@ -2,140 +2,265 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Admin babysitter profile</title>
-        <link rel="stylesheet" href="{% static 'sit/profile.css' %}">
-    </head>
-    <body>
+
+<head>
+    <title>Admin babysitter profile</title>
+    <link rel="stylesheet" href="{% static 'sit/profile.css' %}">
+</head>
+
+<body>
     <div id="header">
         <header>
-        <img class = "box" id = "logo" src="{% static 'sit/images/logo.jpg' %}"  >
-        <a href="/"><img class = "back_login" src = "{% static 'sit/images/logout.png' %}"></a>
+            <img class="box" id="logo" src="{% static 'sit/images/logo.jpg' %}">
+            <a href="/">
+                <font color="white">Log Out</font>
+            </a>
         </header>
     </div>
-        <div id="back_button">
-            <a href="/">&lang; Back</a>
-        </div>
-        <div id="profile_title">
-            <h1>Babysitter Profile</h1>
-        </div>
-        <div id="image">
-            <img class="leftbox" id="sitters" src="{% static 'sit/images/profile-image.jpg' %}">
-        </div>
-        <div id="profile_name">
-            <h1>{{ sitter.first_name }} {{ sitter.last_name }}</h1>
+    <div id="back_button">
+        <a href="/adminHome">&lang; Back</a>
+    </div>
+    <div id="profile_title">
+        <h1>Babysitter Profile</h1>
+    </div>
+    <div id="image">
+        <img class="leftbox" id="sitters" src="{% static 'sit/images/profile-image.jpg' %}">
+    </div>
+    <div id="profile_name">
+        <h1>{{ sitter.babysitter_fname }} {{ sitter.babysitter_lname }}</h1>
+        <br>
+        <!-- <p>21 years old</p> -->
+    </div>
+    <div id="profile_information_title">
+        <ul style="list-style-type:square;">
+            <li>Telephone: <span class="text">{{ sitter.babysitter_phone }}</span></li>
             <br>
-            <p>21 years old</p>
-        </div>
-        <div id="profile_information_title">
-            <ul style="list-style-type:square;">
-            <li>Telephone: <span class = "text">{{ sitter.babysitter_phone }}</span></li>
+            <li>Email: <span class="text">{{ sitter.email }}</span></li>
             <br>
-            <li>Email: <span class = "text">{{ sitter.email }}</span></li>
-            <br>
-            <li>Address: <span class = "text">{{sitter.babysitter_address_street1}}
-                {% if sitter.babysitter_address_street2 %}
+            <li>Address: <span class="text">{{sitter.babysitter_address_street1}}
+                    {% if sitter.babysitter_address_street2 %}
                     {{sitter.babysitter_address_street2}}
-                {% endif %}
-                {{sitter.babysitter_address_city}},
-                {{sitter.babysitter_address_state}} {{sitter.babysitter_address_zip}}
+                    {% endif %}
+                    {{sitter.babysitter_address_city}},
+                    {{sitter.babysitter_address_state}} {{sitter.babysitter_address_zip}}
                 </span>
             </li>
             <br>
             <br>
-            <li>Languages: <span class = "text">
-                {% for language in langs %}
-                    {{language}}, 
-                {% endfor %}
-            </span></li>
             <br>
-            <li>Experience (years): <span class = "text">{{sitter.babysitter_years_of_experience}}</span></li>
+            <li>Languages: <span class="text">
+                    {% for language in langs %}
+                    {{language}},
+                    {% endfor %}
+                </span></li>
             <br>
-            <li>Ages: <span class = "text">
-                {% if sitter.babysitter_age01_or_younger %}
-                    1 and younger, 
-                {% endif %}
-                {% if sitter.babysitter_age02 %}
-                    2, 
-                {% endif %}
-                {% if sitter.babysitter_age03 %}
-                    3, 
-                {% endif %}
-                {% if sitter.babysitter_age04 %}
-                    4, 
-                {% endif %}
-                {% if sitter.babysitter_age05 %}
-                    5, 
-                {% endif %}
-                {% if sitter.babysitter_age06 %}
-                    6, 
-                {% endif %}
-                {% if sitter.babysitter_age07 %}
-                    7, 
-                {% endif %}
-                {% if sitter.babysitter_age08 %}
-                    8, 
-                {% endif %}
-                {% if sitter.babysitter_age09 %}
-                    9, 
-                {% endif %}
-                {% if sitter.babysitter_age10 %}
-                    10, 
-                {% endif %}
-                {% if sitter.babysitter_age11 %}
-                    11, 
-                {% endif %}
-                {% if sitter.babysitter_age12_plus %}
-                    12 and up 
-                {% endif %}
-            </span></li>
-            </ul>
-        </div>
-        <div id="profile_information_text">
-            <p>Experience with Physically/Mentally Challenged Children: 
-                {% if sitter.babysitter_works_with_disabilities %}
-                    Yes
-                {% else %}
-                    No
-                {% endif %}
-            </p>
-        </div>
-        <div id="link_resume">
-            <a href="https://www.google.com/"><font color="white">Resume</font></a>
-        </div>
-        <div id="link_edit">
-            <a href="https://www.google.com/">Edit</a>
-        </div>
-        <div id= "Accepted_job" class= "job_box">
+            <li>Experience (years): <span class="text">{{sitter.babysitter_years_of_experience}}</span></li>
+            <br>
+            <li>Ages: <span class="text">
+                    {% if sitter.babysitter_age01_or_younger %}
+                    1 and younger,
+                    {% endif %}
+                    {% if sitter.babysitter_age02 %}
+                    2,
+                    {% endif %}
+                    {% if sitter.babysitter_age03 %}
+                    3,
+                    {% endif %}
+                    {% if sitter.babysitter_age04 %}
+                    4,
+                    {% endif %}
+                    {% if sitter.babysitter_age05 %}
+                    5,
+                    {% endif %}
+                    {% if sitter.babysitter_age06 %}
+                    6,
+                    {% endif %}
+                    {% if sitter.babysitter_age07 %}
+                    7,
+                    {% endif %}
+                    {% if sitter.babysitter_age08 %}
+                    8,
+                    {% endif %}
+                    {% if sitter.babysitter_age09 %}
+                    9,
+                    {% endif %}
+                    {% if sitter.babysitter_age10 %}
+                    10,
+                    {% endif %}
+                    {% if sitter.babysitter_age11 %}
+                    11,
+                    {% endif %}
+                    {% if sitter.babysitter_age12_plus %}
+                    12 and up
+                    {% endif %}
+                </span></li>
+        </ul>
+    </div>
+    <div id="profile_information_text">
+        <p>Experience with Physically/Mentally Challenged Children:
+            {% if sitter.babysitter_works_with_disabilities %}
+            Yes
+            {% else %}
+            No
+            {% endif %}
+        </p>
+    </div>
+    <div id="link_resume">
+        <a href="https://www.google.com/">
+            <font color="white">Resume</font>
+        </a>
+    </div>
+    <div id="link_edit">
+        <a href="https://www.google.com/">Edit</a>
+    </div>
+    <div id="Accepted_job" class="job_box">
 
-            <div id= "AJbox">
-    
-    
-                <span class= box_text> Bob & Joe</span>
-    
-                <span class= sub_text> October 31, 2019</span> 
-    
+        <div id="AJbox">
+
+
+            <span class=box_text>Future Jobs</span>
+
+            <span class=sub_text></span>
+
+            <!-- <button id="myBtn">Open Modal</button> -->
+
         </div>
-    
-            <h4 id ="sizeOfh4">Accepted job offers</h4>
-    
+
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <ul>
+                    {{now}}
+                    {% for job in jobs %}
+                    {% if job.sitter == sitter and not job.is_old_job %}
+                    <li><a href="/{{job.id}}">{{job}}<br>{{job.datetime_start}} to {{job.datetime_end}}</a></li>
+                    <br>
+                    {% endif %}
+                    {% endfor %}
+
+                </ul>
+            </div>
+
         </div>
-    
-            
-    
-         <div id= "Past_job" class= "job_box">
-    
-             <div id= "PaJbox">
-    
-    
-                <span class= box_text> Bob & Joe</span>  
-    
-                <span class= sub_text> October 31, 2019</span> 
-    
-             </div>
-    
-            <h4 id ="sizeOfh4">Past job offers</h4>
-    
+
+
+
+
+
+
+
+
+
+        <h4 id="sizeOfh4">Accepted job offers</h4>
+
+    </div>
+
+
+
+    <div id="Past_job" class="job_box">
+
+        <div id="PaJbox">
+
+
+            <span class=box_text>Past Jobs</span>
+
+            <span class=sub_text></span>
+
         </div>
-    </body>
+
+
+        <!-- The Modal -->
+        <div id="myModal1" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content1">
+                <span class="close1">&times;</span>
+                <ul>
+                    {{now}}
+                    {% for job in jobs %}
+                    {% if job.sitter == sitter and job.is_old_job %}
+                    <li><a href="/{{job.id}}">{{job}}<br>{{job.datetime_start}} to {{job.datetime_end}}</a></li>
+                    <br>
+                    {% endif %}
+                    {% endfor %}
+
+                </ul>
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <h4 id="sizeOfh4">Past job offers</h4>
+
+    </div>
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("myModal");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("AJbox");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks on the button, open the modal 
+    btn.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    // window.onclick = function (event) {
+    //     if (event.target == modal) {
+    //         modal.style.display = "none";
+    //     }
+    // }
+
+    var modal1 = document.getElementById("myModal1");
+    var btn1 = document.getElementById("PaJbox");
+    var span1 = document.getElementsByClassName("close1")[0];
+
+    btn1.onclick = function () {
+        modal1.style.display = "block";
+    }
+
+    span1.onclick = function () {
+        modal1.style.display = "none";
+    }
+
+    window.onclick = function (event) {
+        if (event.target == modal1) {
+            modal1.style.display = "none";
+        }
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+</script>
+
 </html>
