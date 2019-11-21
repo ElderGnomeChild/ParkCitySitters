@@ -278,3 +278,105 @@ a{
     
 }
     
+@media only screen and (max-width: 600px){
+    #profile_information_title{
+        position: absolute;
+        height: 315px;
+        width: 330px;
+        top: 370px;
+        left: 44px;
+    }
+
+    #header{
+        width: 100%;
+        height: 100px;
+    }
+
+    .box{
+        left: 50%;
+    }
+
+
+    #profile_name>h1{
+        font-size: 30;
+        top: 270px;
+        left: 154px;
+        width: 200px;
+    }
+
+    #profile_name>p{
+        top:303px;
+        left: 154px;
+        width: 200px;
+    }
+
+    .logo{
+        height: 100px;
+        left: 40%;
+    }
+
+    .leftbox{
+        height: 100px;
+        width: 100px;
+        left: 37px;
+        top: 245px;
+    }
+
+    #Accepted_job{
+       left: 37px;
+       top: 650px;
+       height: 215px;
+       width: 400px;
+    }
+
+    #AJbox{
+        height: 140px;
+        width: 148px;
+        left: 13px;
+    }
+
+    #Past_job{
+        left: 37px;
+        top: 870px;
+        height: 215px;
+        width: 400px;
+    }
+
+    #PaJbox{
+        height: 140px;
+        width: 148px;
+        left: 13px;
+    }
+
+    #link_resume{
+        height: 60px;
+        width: 220px;
+        top: 1145px;
+        left: 100px;
+    }
+
+    #link_edit{
+       height: 21px;
+       width: 33px;
+       top: 1223px;
+       left: 191px; 
+    }
+
+    .box_text{
+        font-size: 16px;
+        left: 15%;
+    }
+
+    .sub_text{
+        font-size: 10px;
+        left: 15%;
+    }
+
+    #profile_information_text> p{
+        top: 620px;
+        right: 44px;
+        height: 14px;
+        width: 315px;
+        font-size: 10px;
+    }
+}

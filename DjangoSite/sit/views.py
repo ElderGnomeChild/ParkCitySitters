@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse, Http404
 from django.template import Context, loader
+from .models import Job, Child, Babysitter
 
 # Create your views here.
 
@@ -19,8 +20,24 @@ def addjob(request):
 def adminHome(request):
     return render(request, 'sit/adminHome.html')
 
-def profiles(request):
-    return render(request,'sit/profiles.html')
+def profiles(request, sitter_id):
+    sitter = get_object_or_404(Babysitter, pk=sitter_id)
+    langs = sitter.babysitter_languages.all()
+    # jobs = Job.objects.get(sitter=sitter)
+    return render(request, 'sit/profiles.html', {'sitter':sitter, 'langs':langs})
 
 def sitterHome(request):
     return render(request, 'sit/sitterHome.html')
+
+def showJobTest(request, job_id):
+    job = get_object_or_404(Job, pk=job_id)
+    children = job.child.all()
+    return render(request, 'sit/oneJobTest.html', {'job':job, 'children':children})
+
+def seeJobsTest(request):
+    job_list= Job.objects.order_by('id')
+    # output = ', '.join([j.location for j in job_list])
+    # template = loader.get_template('sit/showJobTest.html')
+    context= {'job_list':job_list}
+    # return HttpResponse(template.render(context, request))
+    return render(request, 'sit/showJobTest.html', context)

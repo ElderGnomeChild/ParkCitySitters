@@ -13,4 +13,4 @@ class BabysitterChangeForm(UserChangeForm):
 
     class Meta:
         model = Babysitter
-        fields = ('username', 'email')
+        fields = ('username', 'email', 'babysitter_fname', 'babysitter_lname', 'babysitter_phone')

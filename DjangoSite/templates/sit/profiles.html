@@ -10,11 +10,11 @@
     <div id="header">
         <header>
         <img class = "box" id = "logo" src="{% static 'sit/images/logo.jpg' %}"  >
-        <a href="http://cs.westminstercollege.edu/pcs/sit/"><img class = "back_login" src = "{% static 'sit/images/logout.png' %}"></a>
+        <a href="/"><img class = "back_login" src = "{% static 'sit/images/logout.png' %}"></a>
         </header>
     </div>
         <div id="back_button">
-            <a href="https://www.w3schools.com/html/">&lang; Back</a>
+            <a href="/">&lang; Back</a>
         </div>
         <div id="profile_title">
             <h1>Babysitter Profile</h1>
@@ -23,27 +23,82 @@
             <img class="leftbox" id="sitters" src="{% static 'sit/images/profile-image.jpg' %}">
         </div>
         <div id="profile_name">
-            <h1>Melissa Jone</h1>
+            <h1>{{ sitter.first_name }} {{ sitter.last_name }}</h1>
             <br>
             <p>21 years old</p>
         </div>
         <div id="profile_information_title">
             <ul style="list-style-type:square;">
-            <li>Telephone: <span class = "text">+1(123)-123-1234</span></li>
+            <li>Telephone: <span class = "text">{{ sitter.babysitter_phone }}</span></li>
             <br>
-            <li>Email: <span class = "text">abc123@gmail.com</span></li>
+            <li>Email: <span class = "text">{{ sitter.email }}</span></li>
             <br>
-            <li>Address: <span class = "text">1840S 1333E</span></li>
+            <li>Address: <span class = "text">{{sitter.babysitter_address_street1}}
+                {% if sitter.babysitter_address_street2 %}
+                    {{sitter.babysitter_address_street2}}
+                {% endif %}
+                {{sitter.babysitter_address_city}},
+                {{sitter.babysitter_address_state}} {{sitter.babysitter_address_zip}}
+                </span>
+            </li>
             <br>
-            <li>Languages: <span class = "text">English</span></li>
             <br>
-            <li>Experience: <span class = "text">3 years</span></li>
+            <li>Languages: <span class = "text">
+                {% for language in langs %}
+                    {{language}}, 
+                {% endfor %}
+            </span></li>
             <br>
-            <li>Age range: <span class = "text">1-3 years old</span></li>
+            <li>Experience (years): <span class = "text">{{sitter.babysitter_years_of_experience}}</span></li>
+            <br>
+            <li>Ages: <span class = "text">
+                {% if sitter.babysitter_age01_or_younger %}
+                    1 and younger, 
+                {% endif %}
+                {% if sitter.babysitter_age02 %}
+                    2, 
+                {% endif %}
+                {% if sitter.babysitter_age03 %}
+                    3, 
+                {% endif %}
+                {% if sitter.babysitter_age04 %}
+                    4, 
+                {% endif %}
+                {% if sitter.babysitter_age05 %}
+                    5, 
+                {% endif %}
+                {% if sitter.babysitter_age06 %}
+                    6, 
+                {% endif %}
+                {% if sitter.babysitter_age07 %}
+                    7, 
+                {% endif %}
+                {% if sitter.babysitter_age08 %}
+                    8, 
+                {% endif %}
+                {% if sitter.babysitter_age09 %}
+                    9, 
+                {% endif %}
+                {% if sitter.babysitter_age10 %}
+                    10, 
+                {% endif %}
+                {% if sitter.babysitter_age11 %}
+                    11, 
+                {% endif %}
+                {% if sitter.babysitter_age12_plus %}
+                    12 and up 
+                {% endif %}
+            </span></li>
             </ul>
         </div>
         <div id="profile_information_text">
-            <p>Experience with Physically/Mentally Challenged children</p>
+            <p>Experience with Physically/Mentally Challenged Children: 
+                {% if sitter.babysitter_works_with_disabilities %}
+                    Yes
+                {% else %}
+                    No
+                {% endif %}
+            </p>
         </div>
         <div id="link_resume">
             <a href="https://www.google.com/"><font color="white">Resume</font></a>

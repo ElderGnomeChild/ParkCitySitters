@@ -69,7 +69,7 @@ class Job (models.Model):
     client = models.ForeignKey(Client, on_delete=models.SET_NULL, null=True, blank=True,  default=None)
     child = models.ManyToManyField(Child, blank=True)
 
-    # def __str__(self):
-    #     return "Job " + self._check_id_field
+    def __str__(self):
+        return self.client.client_name + " at " +self.location
 
     
