@@ -65,7 +65,7 @@ h2 {
 }
 
 
-.tbox {
+.tbox , #id_datetime_start, #id_datetime_end, #id_location,#id_num_child, #id_child{
     border: 1px solid #39312C;
     border-radius: 15px;
     height: 70px;
@@ -90,7 +90,7 @@ h2 {
 }
 
 
-.tbox:focus {
+.tbox:focus, #id_datetime_start:focus, #id_datetime_end:focus, #id_location:focus, #id_num_child:focus, #id_child:focus{
     border: 2px solid #FF6F61;
 }
 .tbox:focus::placeholder {

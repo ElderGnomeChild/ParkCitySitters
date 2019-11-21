@@ -15,9 +15,16 @@
         <img class="topimg" src="{% static 'sit/images/boys.jpg' %}">
 
         <div class="content">
-            <h2>Job Offer</h2>
-            <form>
-                <span class="section-title"><h3>Client's Contact Information</h3></span><br>
+            <h2>New Job Form</h2>
+
+            <a href="/clientform"><h4>Need a new Client? Go here first.</h4></a>
+            
+            <form action="/addjob" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <input type="submit" value="Submit" class="submit">
+
+                <!-- <span class="section-title"><h3>Client's Contact Information</h3></span><br>
                 <span class="title-left" id="text-name">Name</span><br>
                 <input type="text" id="fname" class="tbox" name="first" placeholder="First name">
                 <input type="text" id="lname" class="tbox" name="last" placeholder="Last name"><br>
@@ -46,7 +53,7 @@
 
                 
                 <button class = "submit" type="button" onclick="hideElem()">Next</button>
-                
+                 -->
             </form>
         </div>
     </div>

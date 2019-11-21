@@ -3,7 +3,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
 from .models import Job, Child, Babysitter, Client
 import datetime
-from .forms import ClientForm
+from .forms import ClientForm, JobForm
 
 # Create your views here.
 
@@ -16,8 +16,8 @@ def index(request):
 def addsitters(request):
     return render(request, 'sit/addsitters.html')
 
-def addjob(request):
-    return render(request, 'sit/addjob.html')
+# def addjob(request):
+#     return render(request, 'sit/addjob.html')
 
 def adminHome(request):
     return render(request, 'sit/adminHome.html')
@@ -60,6 +60,40 @@ def addClient(request):
         form = ClientForm()
         
         return render(request, 'sit/clientForm.html', {'form':form})
+
+def addjob(request):
+    if request.method == 'POST':
+        form = JobForm(request.POST)
+        if form.is_valid():
+                client = form.cleaned_data['client']
+                child = form.cleaned_data['child']
+                location = form.cleaned_data['location']
+                num_child = form.cleaned_data['num_child']
+                datetime_start = form.cleaned_data['datetime_start']
+                datetime_end = form.cleaned_data['datetime_end']
+
+
+                if form.cleaned_data['sitter']:
+                        sitter = form.cleaned_data['sitter']
+                        j = Job(client=client, location=location, num_child=num_child,
+                        datetime_start=datetime_start, datetime_end=datetime_end, sitter=sitter)
+                        # j.child.add(child)
+                else:
+                        j = Job(client=client, child=child, location=location, num_child=num_child,
+                        datetime_start=datetime_start, datetime_end=datetime_end)
+                        # j.child.add(child)
+
+                j.save()
+                j = Job.objects.get(location=location, num_child=num_child, client=client, datetime_start=datetime_start)
+                for ch in child:
+                        j.child.add(ch)
+                # j.save()
+                return HttpResponseRedirect('/adminHome')
+
+    else:
+        form = JobForm()
+        
+        return render(request, 'sit/addjob.html', {'form':form})
 
 def seeSitters(request):
     sit_list= Babysitter.objects.order_by('id')
