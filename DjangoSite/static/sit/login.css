@@ -141,6 +141,15 @@ h2 {
 /* #cdcbca */
 /* #9b9795 */
 
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 @media only screen and (max-width: 1000px){
     .leftbox {
         position: absolute;
@@ -206,4 +215,12 @@ h2 {
     h2{
         font-size: 20px;
     }
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 }

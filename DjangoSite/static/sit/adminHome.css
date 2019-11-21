@@ -61,14 +61,16 @@ body{
 
 #Hello_name{
     position: absolute;
-    top: 85px; 
+    top: 150px; 
+    left: 80px;
 }
 
 #Pending_job{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 115px;
+    top: 210px;
+    left: 100px;
     padding-left: 20px;
 }
 
@@ -76,7 +78,8 @@ body{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 300px;
+    top: 420px;
+    left:100px;
     padding-left: 20px;
 }
 
@@ -84,7 +87,8 @@ body{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 480px;
+    top: 630px;
+    left: 100px;
     padding-left: 20px;
 }
 
@@ -100,7 +104,7 @@ body{
     position: absolute;
     font-family: railwayBold, sans-serif;
     top: 60px;
-    left: 170px;
+    left: 200px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -117,7 +121,7 @@ body{
 #new_job {
     position: absolute;
     top: 60px;
-    left: 20px;
+    left: 50px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -129,7 +133,7 @@ body{
     font-family: railwayBold, sans-serif;
     text-align: center;
     top: 60px;
-    left: 20px;
+    left: 50px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -146,7 +150,7 @@ body{
 #PaJbox {
     position: absolute;
     top: 60px;
-    left: 20px;
+    left: 50px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -164,7 +168,8 @@ body{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 680px;
+    top: 840px;
+    left: 100px;
     padding-left: 20px;
 }
 
@@ -172,7 +177,7 @@ body{
     position: absolute;
     height: 135px;
     top: 50px;
-    left: 20px;
+    left: 50px;
     border-radius: 50%;
 }
 
@@ -204,7 +209,7 @@ body{
     position: absolute;
     height: 135px;
     top: 50px;
-    left: 170px;
+    left: 200px;
     border-radius: 50%;
     
 
@@ -212,8 +217,8 @@ body{
 
 .name {
     position: absolute;
-    bottom: -20px;
-    padding-left: 170px;
+    top: 200px;
+    padding-left: 210px;
     font-family: railwaySemi, sans-serif;
     font-size: 12px;
 }
