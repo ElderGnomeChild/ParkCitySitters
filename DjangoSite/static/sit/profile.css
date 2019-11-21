@@ -25,6 +25,9 @@
     /* font-weight: 600; */
     src: url('fonts/Raleway-SemiBold.ttf');
 }
+
+ul{ list-style-type: none; }
+
 #header{
     position:absolute;
     background-color: #ff6f61;

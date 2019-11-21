@@ -38,7 +38,7 @@ h2 {
     font-size: 30;
 }
 
-.tbox {
+.tbox, #id_client_phone, #id_client_name {
     border: 1px solid #39312C;
     border-radius: 15px;
     height: 70px;
@@ -48,8 +48,8 @@ h2 {
     margin:0 0 10px 0;
 }
 
-.title-left {
-    position: absolute;
+.title-left, p{
+    /* position: absolute; */
     /* text-align:left; */
     left: 40px;
 }
@@ -61,8 +61,15 @@ h2 {
     margin: 0;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
 
-.tbox:focus {
+
+.tbox:focus, #id_client_phone:focus, #id_client_name:focus{
     border: 2px solid #FF6F61;
 }
 .tbox:focus::placeholder {
@@ -78,7 +85,7 @@ h2 {
 }
 
 
-.submit {
+.submit{
     background-color:#FF6F61;
     border: 0px solid black;
     border-radius: 15px;

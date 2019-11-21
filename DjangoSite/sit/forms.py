@@ -15,6 +15,6 @@ class BabysitterChangeForm(UserChangeForm):
         model = Babysitter
         fields = ('username', 'email', 'babysitter_fname', 'babysitter_lname', 'babysitter_phone')
 
-# class ClientForm(forms.Form):
-#     client_name = forms.CharField(label='Client Name', max_length=50)
-#     client_phone = forms.CharField(label='Client Phone Number', max_length=16)
+class ClientForm(forms.Form):
+    client_name = forms.CharField(label='Client Name', max_length=50)
+    client_phone = forms.CharField(label='Client Phone Number', max_length=16)

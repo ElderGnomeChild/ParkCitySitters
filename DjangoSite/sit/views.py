@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, Http404
+from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
-from .models import Job, Child, Babysitter
+from .models import Job, Child, Babysitter, Client
 import datetime
+from .forms import ClientForm
 
 # Create your views here.
 
@@ -44,3 +45,18 @@ def seeJobsTest(request):
     context= {'job_list':job_list}
     # return HttpResponse(template.render(context, request))
     return render(request, 'sit/showJobTest.html', context)
+
+def addClient(request):
+    if request.method == 'POST':
+        form = ClientForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['client_name']
+            phone = form.cleaned_data['client_phone']
+            c = Client(client_name=name, client_phone=phone)
+            c.save()
+            return HttpResponseRedirect('/adminHome')
+
+    else:
+        form = ClientForm()
+        
+        return render(request, 'sit/clientForm.html', {'form':form})

@@ -14,5 +14,6 @@ urlpatterns = [
 
     path('<int:job_id>', views.showJobTest, name="seeJob"),
     path('jobs', views.seeJobsTest, name="seeJobs"),
+    path('clientform', views.addClient, name="newClient")
 ]
 # urlpatterns += staticfiles_urlpatterns()
