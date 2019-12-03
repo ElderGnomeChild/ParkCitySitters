@@ -1,0 +1,162 @@
+{% load static %}
+
+
+<html>
+    <head>
+        <title>Add a Child</title>
+        <link rel="stylesheet" href="{% static 'sit/addSitters.css' %}">
+    </head>
+    <body>
+<div id ="whole">
+        <div class="header">
+
+        </div>
+        <img class="topimg" src="{% static 'sit/images/biy.jpg' %}">
+        <div class="content">
+            <h2>New Child Form</h2>
+            <form action="/childform" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <input type="submit" value="Submit" class="submit">
+
+
+
+                <!-- <span class="title-left" id="text-name">Name</span><br>
+                <input type="text" id="fname" class="tbox" name="first" placeholder="First name">
+                <input type="text" id="lname" class="tbox" name="last" placeholder="Last name"><br>
+                <span class="title-left" id="text-phone">Phone Number</span>
+                <span class="title-right" id="text-email">Email Address</span><br>
+                <input type="tel" id="pnumber" class="tbox" name="phone" placeholder="(123) 456-7890">
+                <input type="email" id="email" class="tbox" name="email" placeholder="info@contact.com"><br>
+                <span class="title-left" id="text-address">Address, city, state, zip code</span><br>
+                <input type="text" id="address" class="tbox" name="address" placeholder="Click to edit"><br>
+                <span class="title-left" id="text-dob">Date of Birth</span>
+                <span class="title-right" id="text-lang">Languages</span><br>
+                <input type="date" id="dob" class="tbox" name="dob" placeholder="mm/dd/yyyy">
+                <input type="text" id="lang" class="tbox" name="languages" placeholder="English, French, etc."><br>
+                <span class="title-left" id="text-experience">Experience (in years)</span><br>
+                <input type="number" id="exp" class="tbox" name="experience" placeholder="1">
+                <input type="checkbox" class="cbox" name="challenge" value=""> Experience with physically/mentally challenged children<br>
+                <span id="text-age">Age preference</span><br><br> -->
+
+                <!-- <span class="title-left" id="text-upload">Upload documents</span><br><br>
+                <input type="file" class="title-left" id="fileinput" name="profile picture"> Profile Picture (200*200 pixels, jpg)<br>
+                <input type="file" class="title-left" id="fileinput" name="resume"> Resume<br>
+                <button class = "submit" type="button" onclick="hideElem()">Continue</button> -->
+
+
+                
+
+
+
+            </form>
+    </div>
+</div>
+        </div>
+        <div id="profile_information_title" class = "hidden" >
+            <div id ="title">
+                <p> New Babysitter</p>
+                <img class = "back_login" src = "{% static 'sit/images/logout.png' %}" onclick="exit()"></a>
+            </div>
+            <div id ="read">
+                <p>Please review all the information before submitting</p>
+            </div>
+            <div id="image" class="leftbox">
+                <img class="leftbox" id="sitters" src="{% static 'sit/images/profiles.jpg' %}">
+            </div>
+            
+            <ul id = "profile" style="list-style-type:square;">            <li class = "profile">Telephone: <span class = "text">+1(123)-123-1234</span></li>
+            
+            <li >Name <span class = "text">Anne Dupont</span></li>
+            
+            <li >Phone number <span class = "text">(123)123-1234</span></li>
+            
+            <li >Email <span class = "text">anne.dupont@gmail.com</span></li>
+            
+            <li >Hotel or venue address <span class = "text">1840S 1300E Salt Lake City, UT 84105</span></li>
+                <br>
+            <li >Date of Birth <span class = "text">October 12, 1999</span></li>
+           
+            <li >Languages <span class = "text">English,French</span></li>
+          
+            <li >Years of Experiecce <span class = "text">2 years</span></li>
+          
+            <li >Age preference <span class = "text">1,2,3,4,5,6,7,8,9,10,11,12+</span></li>
+
+        
+            <p >Experience with Physically/Mentally Challenged children</p>
+        </ul>
+            
+                <input type="submit" class="submit1" value="Submit" onclick="success()">
+            </a>
+        
+
+        </div>
+        <div id="congratulations" class = "hidden" >
+                <div id ="title">
+                    <p> Congratulations!</p>
+            
+                </div>
+                
+                <div id="image" class="leftbox1">
+                    <img class="leftbox1" id="sitters" src="{% static 'sit/images/profiles.jpg' %}">
+                </div>
+                <div id ="seten">
+                <p>Your new babysitter has been successfully created</p>
+            </div>
+                <input type="submit" class="submit1" value="Go to homepage" onclick="error()">
+                </a>
+            
+    
+            </div>
+            <div id="error" class = "hidden" >
+                    <div id ="title">
+                        <p> Warning</p>
+                
+                    </div>
+                    
+                    <div id="image" class="leftbox1">
+                        <img class="leftbox1" id="sitters" src="{% static 'sit/images/profiles.jpg' %}">
+                    </div>
+                    <div id ="seten">
+                    <p>Something went wrong and your babysitter has not been created</p>
+                </div>
+                    <input type="submit" class="submit1" value="ok" onclick="hidElem()">
+                    </a>
+                
+        
+                </div>
+        
+        <script>
+            function exit() {
+              document.getElementById("profile_information_title").classList.add("hidden"); 
+              document.getElementById("whole").classList.remove("background"); 
+                }
+            function hideElem() {
+              document.getElementById("profile_information_title").classList.remove("hidden"); 
+              document.getElementById("whole").classList.add("background"); 
+                }
+            function hidElem() {
+              document.getElementById("error").classList.add("hidden"); 
+              document.getElementById("whole").classList.remove("background"); 
+                }
+            function success() {
+              document.getElementById("congratulations").classList.remove("hidden"); 
+              document.getElementById("profile_information_title").classList.add("hidden");
+              document.getElementById("whole").classList.add("background"); 
+                }
+             function error() {
+              document.getElementById("error").classList.remove("hidden"); 
+              document.getElementById("congratulations").classList.add("hidden"); 
+              document.getElementById("profile_information_title").classList.add("hidden");
+               
+                }
+            
+            
+            
+            
+            </script>
+        
+
+    </body>
+</html>

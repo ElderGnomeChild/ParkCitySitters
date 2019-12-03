@@ -15,6 +15,7 @@ urlpatterns = [
     path('<int:job_id>', views.showJobTest, name="seeJob"),
     path('jobs', views.seeJobsTest, name="seeJobs"),
     path('clientform', views.addClient, name="newClient"),
+    path('childform', views.addChild, name="newChild"),
     path('sitters', views.seeSitters, name="sitters"),
     path('past', views.pastJobs, name="past"),
     path('accepted', views.acceptedJobs, name="accepted"),

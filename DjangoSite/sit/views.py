@@ -3,7 +3,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
 from .models import Job, Child, Babysitter, Client
 import datetime
-from .forms import ClientForm, JobForm
+from .forms import ClientForm, JobForm, ChildForm
 
 # Create your views here.
 
@@ -60,6 +60,23 @@ def addClient(request):
         form = ClientForm()
         
         return render(request, 'sit/clientForm.html', {'form':form})
+
+def addChild(request):
+        if request.method == 'POST':
+                form = ChildForm(request.POST)
+                if form.is_valid():
+                        name = form.cleaned_data['child_firstname']
+                        yrs = form.cleaned_data['child_age_years']
+                        mons = form.cleaned_data['child_age_months']
+                        allergies = form.cleaned_data['child_allergies']
+                        parent = form.cleaned_data['child_parent']
+
+                        child = Child(child_firstname=name, child_age_years=yrs, child_age_months=mons, child_allergies=allergies, child_parent=parent)
+                        child.save()
+                        return HttpResponseRedirect('/adminHome')
+        else:
+                form = ChildForm()
+                return render(request, 'sit/childForm.html', {'form':form})
 
 def addjob(request):
     if request.method == 'POST':

@@ -38,7 +38,7 @@ h2 {
     font-size: 30;
 }
 
-.tbox, #id_client_phone, #id_client_name {
+.tbox, #id_client_phone, #id_client_name, #id_child_firstname, #id_child_age_years, #id_child_age_months {
     border: 1px solid #39312C;
     border-radius: 15px;
     height: 70px;
@@ -47,6 +47,17 @@ h2 {
     font-size: 18;
     margin:0 0 10px 0;
 }
+
+#id_child_allergies {
+    border: 1px solid #39312C;
+    border-radius: 15px;
+    height: 140px;
+    width: 370px;
+    text-align: center;
+    font-size: 18;
+    margin:0 0 10px 0;
+}
+
 
 .title-left, p{
     /* position: absolute; */
@@ -69,7 +80,8 @@ button:focus {
 }
 
 
-.tbox:focus, #id_client_phone:focus, #id_client_name:focus{
+.tbox:focus, #id_client_phone:focus, #id_client_name:focus,
+#id_child_firstname:focus, #id_child_age_years:focus, #id_child_age_months:focus, #id_child_allergies:focus {
     border: 2px solid #FF6F61;
 }
 .tbox:focus::placeholder {
