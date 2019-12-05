@@ -38,6 +38,28 @@ def showJobTest(request, job_id):
     children = job.child.all()
     return render(request, 'sit/oneJobTest.html', {'job':job, 'children':children})
 
+def pickupJob(request, job_id, sitter_id):
+    job = get_object_or_404(Job, pk=job_id)
+    sitter = Babysitter.objects.get(pk=sitter_id)
+    children = job.child.all()
+    return render(request, 'sit/oneJobTest.html', {'job':job, 'children':children})
+
+
+def availableJobs(request, sitter_id):
+    job_list= Job.objects.order_by('id')
+    sitter = Babysitter.objects.get(pk=sitter_id)
+
+    eligible_jobs = []
+    for job in job_list:
+            if not job.is_old_job and not job.sitter:
+                    eligible_jobs.append(job)
+#     print(eligible_jobs)                
+
+    context= {'job_list':eligible_jobs, 'sitter':sitter}
+    return render(request, 'sit/availableJobs.html', context)
+
+
+
 def seeJobsTest(request):
     job_list= Job.objects.order_by('id')
     # output = ', '.join([j.location for j in job_list])

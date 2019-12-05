@@ -1,0 +1,13 @@
+Hi {{ sitter.babysitter_fname }}. You are available for these Jobs.
+
+{% if job_list %}
+    <ul>
+    {% for job in job_list %}
+
+        <li><a href="/{{ job.id }}">{{ job }}</a></li>
+    
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No jobs are available.</p>
+{% endif %}
