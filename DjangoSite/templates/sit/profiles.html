@@ -11,10 +11,12 @@
 <body>
     <div id="header">
         <header>
-            <img class="box" id="logo" src="{% static 'sit/images/th.jpg' %}">
-            <a href="/">
-                <font color="white">Log Out</font>
-            </a>
+            <div id="header">
+                <a href="/" id="logoutImg">Logout</a>
+            </div>
+            <div id="logo">
+                <img id="logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder="Picture of the logo">
+            </div>
         </header>
     </div>
     <div id="back_button">
@@ -133,7 +135,7 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <ul>
-                    
+
                     {% for job in jobs %}
                     {% if job.sitter == sitter and not job.is_old_job %}
                     <li><a href="/{{job.id}}">{{job}}<br>{{job.datetime_start}} to {{job.datetime_end}}</a></li>
@@ -179,7 +181,7 @@
             <div class="modal-content1">
                 <span class="close1">&times;</span>
                 <ul>
-                    
+
                     {% for job in jobs %}
                     {% if job.sitter == sitter and job.is_old_job %}
                     <li><a href="/{{job.id}}">{{job}}<br>{{job.datetime_start}} to {{job.datetime_end}}</a></li>
