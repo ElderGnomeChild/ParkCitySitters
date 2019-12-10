@@ -1,28 +1,28 @@
 @font-face {
     font-family: raleway;
-    /* font-style: normal; */
-    /* font-weight: 400; */
+     font-style: normal;
+     font-weight: 400; 
     src: url('fonts/Raleway-Regular.ttf');
 }
 
 @font-face {
     font-family: ralewayBold;
-    /* font-style: normal; */
-    /* font-weight: 700; */
+     font-style: normal; 
+     font-weight: 700; 
     src: url('fonts/Raleway-Bold.ttf');
 }
 
 @font-face {
     font-family: ralewayMedium;
-    /* font-style: normal; */
-    /* font-weight: 500; */
+     font-style: normal; 
+     font-weight: 500; 
     src: url('fonts/Raleway-Medium.ttf');
 }
 
 @font-face {
     font-family: ralewaySemi;
-    /* font-style: normal; */
-    /* font-weight: 600; */
+     font-style: normal; 
+     font-weight: 600; 
     src: url('fonts/Raleway-SemiBold.ttf');
 }
 
@@ -34,25 +34,28 @@ ul{ list-style-type: none; }
     left:0px;
     top:0px;
     height:100px;
-    width:1920px;
-    text-align:right;
+    width:100%;
+   
 }
-.back_login{
-    position:absolute;
-    width:40.44px;
-    height:49.08px;
-    right:50px;
-    top:25px;
-}
-.box{
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    top: 10px;
-    left:50px;
 
+#logo_pic{
+    position: absolute;
+    left: 30px;
+    height: 70px;
+    border-radius: 25px;
+    top: 10px;
 }
+
+#logoutImg {
+    position: absolute;
+    font-family: raleway, sans-serif;
+    width: 50px;
+    top: 10px;
+    right: 60px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
 #back_button{
     position: absolute;
     font-family: ralewaySemi, sans-serif;
@@ -163,6 +166,8 @@ a{
 
     left:90vh;
 
+    padding-bottom: 2vh;
+
 }
 #Past_job{
 
@@ -172,11 +177,12 @@ a{
 
     width: 100vw;
 
-    top: 65vh;
+    top: 70vh;
 
     padding-left: 2vw;
     
     left:90vh;
+    padding-top: 10px;
 }
 #sizeOfh4{
     font-family: railwayBold, sans-serif;
@@ -224,7 +230,7 @@ a{
     
     position: absolute;
     
-    top: 80px;
+    top: 95px;
     
     left: 75px;
     
@@ -233,12 +239,14 @@ a{
     height: 200px;
     
     width: 200px;
+
     
     box-shadow: 0px 0px 10px 5px #e6e6e6;
     
     color: #ffffff;
     
         background-color: #39312c;
+    
     
     }
     
@@ -296,9 +304,12 @@ a{
     }
 
     .box{
-        left: 50%;
+        position: absolute;
+        left: 30px;
+        height: 70px;
+        border-radius: 25px;
+        top: 10px;
     }
-
 
     #profile_name>h1{
         font-size: 30;
@@ -314,8 +325,11 @@ a{
     }
 
     .logo{
-        height: 100px;
-        left: 40%;
+        position: absolute;
+        left: 30px;
+        height: 70px;
+        border-radius: 25px;
+        top: 10px;
     }
 
     .leftbox{

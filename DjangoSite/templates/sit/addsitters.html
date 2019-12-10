@@ -10,7 +10,9 @@
 <div id ="whole">
         <div class="header">
                 <a href="/" id="logout">Log Out</a>
-                <a href="/adminHome" id="back">back</a>
+                <div id="back_button">
+                    <a href="/adminHome">&lang; Back</a>
+                </div>
         </div>
         <img class="topimg" src="{% static 'sit/images/biy.jpg' %}">
         <div class="content">
@@ -31,7 +33,16 @@
                 <input type="text" id="lang" class="tbox" name="languages" placeholder="English, French, etc."><br>
                 <span class="title-left" id="text-experience">Experience (in years)</span><br>
                 <input type="number" id="exp" class="tbox" name="experience" placeholder="1">
-                <input type="checkbox" class="cbox" name="challenge" value=""> Experience with physically/mentally challenged children<br>
+
+                <!-- <input type="checkbox" class="cbox" name="challenge" value=""> Experience with physically/mentally challenged children<br> -->
+            
+
+                <label class="container">Experience with physically/mentally challenged children
+                    <input type="checkbox" class="cbox" name="challenge" value="">
+                    <span class="checkmark"></span>
+                </label><br>
+
+
                 <span id="text-age">Age preference</span><br><br>
 
 

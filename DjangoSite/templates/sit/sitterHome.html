@@ -9,7 +9,7 @@
     <body>
     <div id ="whole">
         <div id= "header" >
-        <a href= "/">Log Out</a> 
+        <a href= "/" id="logoutImg">Logout</a> 
         </div>
         <div id= "logo">
             <img id= "logo_pic" src="{% static 'sit/images/th.jpg' %}" alt= "Picture of the logo">
@@ -17,6 +17,10 @@
 
         <div id= "profile_picture">
             <img id= "profile"  src= "{% static 'sit/images/roster_pic.jpg' %}" alt="profile picture">
+        </div>
+
+        <div id="back_button" onclick="goBack()">
+            <a href="\">&lang; Back</a>
         </div>
 
         <div id= "Hello_name">

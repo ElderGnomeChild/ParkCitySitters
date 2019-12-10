@@ -35,18 +35,42 @@ body{
     font-family: raleway, sans-serif;
 }
 
+#logoutImg {
+    position: absolute;
+    width: 50px;
+    top: 10px;
+    right: 60px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+#back_button{
+    position: absolute;
+    font-family: ralewaySemi, sans-serif;
+    font-size:18;
+    top:120px;
+    left:25px;
+}
+
+a{
+    color:#EDAA86;
+    text-decoration: none;
+}
+
+
 #logo_pic{
     position: absolute;
     left: 30px;
-    height: 40px;
+    height: 70px;
     border-radius: 25px;
+    top: 10px;
 }
 
 #profile{
     position: absolute;
-    right: 50px;
-    height: 50px;
-    top: 105px;
+    right: 40px;
+    height: 100px;
+    top: 132px;
     border-radius: 50%;
 }
 
@@ -61,14 +85,16 @@ body{
 
 #Hello_name{
     position: absolute;
-    top: 85px;
+    top: 150px; 
+    left: 80px;
 }
 
 #Pending_job{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 120px;
+    top: 210px;
+    left: 100px;
     padding-left: 20px;
 }
 
@@ -76,7 +102,8 @@ body{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 300px;
+    top: 420px;
+    left:100px;
     padding-left: 20px;
 }
 
@@ -84,7 +111,8 @@ body{
     position: absolute;
     height: 100px;
     width: 100%;
-    top: 480px;
+    top: 630px;
+    left: 100px;
     padding-left: 20px;
 }
 
@@ -93,14 +121,14 @@ body{
     height: 25px;
     width: 25px;
     top: 10px;
-    right: 10px;
+    right: 60px;
 }
 
 #PJbox {
     position: absolute;
     font-family: railwayBold, sans-serif;
     top: 60px;
-    left: 20px;
+    left: 50px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -114,12 +142,13 @@ body{
     color: #ffffff;
 }
 
+
 #AJbox {
     position: absolute;
     font-family: railwayBold, sans-serif;
     text-align: center;
     top: 60px;
-    left: 20px;
+    left: 50px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -136,7 +165,7 @@ body{
 #PaJbox {
     position: absolute;
     top: 60px;
-    left: 20px;
+    left: 50px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
@@ -150,6 +179,15 @@ body{
     color: black;
 }
 
+#babysitters{
+    position: absolute;
+    height: 100px;
+    width: 100%;
+    top: 840px;
+    left: 100px;
+    padding-left: 20px;
+}
+
 #icon {
     position: absolute;
     right: -10px;
@@ -157,6 +195,15 @@ body{
     top: -10px;
     border-radius: 50%;
 }
+
+#add_sitter {
+    position: absolute;
+    height: 135px;
+    top: 50px;
+    left: 50px;
+    border-radius: 50%;
+}
+
 
 .box_text {
     position: absolute;
@@ -172,6 +219,24 @@ body{
     font-size: 12px;
     bottom: 10%;
     left: 15px;
+}
+
+#look_at_me {
+    position: absolute;
+    height: 135px;
+    top: 50px;
+    left: 200px;
+    border-radius: 50%;
+    
+
+}
+
+.name {
+    position: absolute;
+    top: 200px;
+    padding-left: 210px;
+    font-family: railwaySemi, sans-serif;
+    font-size: 12px;
 }
 
 .submit1:hover{
@@ -227,14 +292,8 @@ background-color: #FF9388;
     right:50px;
     top:25px;
 }
-#profile{
-    position: absolute;
-    font-family: ralewayBold, sans-serif;
-    font-size: 18px;
-    top:200px;
-    left:120px;
-    
-}
+     
+
 
 .text1{
     position: absolute;
@@ -269,18 +328,12 @@ background-color: #FF9388;
 
 }
 
-@media only screen and (max-width: 10000px){
+@media only screen and (max-width: 1000px){
     #Hello_name{
         position: absolute;
         right: 30%;
         text-align: center;
         top: 100px; 
-    }
-
-    #logo_pic {
-        height: 100px;
-        left: 40%;
-        top: 0px;
     }
 
     #Pending_job {
@@ -316,7 +369,7 @@ background-color: #FF9388;
     }
 
     #look_at_me {
-        height: 150px;
+        height: 50px;
         padding: 5px;
     }
 
@@ -341,7 +394,8 @@ background-color: #FF9388;
     }
 
     #logo_pic{
-        right: 40%;
+        left: 0px;
+        height: 40px;
     }
 
 }
