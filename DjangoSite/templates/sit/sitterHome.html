@@ -2,112 +2,143 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Babysitter Homepage</title>
-        <link rel= "stylesheet" href ="{% static 'sit/sitterHome.css' %}">
-    </head>
-    <body>
-    <div id ="whole">
-        <div id= "header" >
-        <a href= "/" id="logoutImg">Logout</a> 
+
+<head>
+    <title>Babysitter Homepage</title>
+    <link rel="stylesheet" href="{% static 'sit/sitterHome.css' %}">
+    <link rel="stylesheet" href="{% static 'sit/fontstyle.css' %}">
+</head>
+
+<body>
+    <div id="whole">
+        <div id="header">
+            <a href="/" id="logoutImg">Logout</a>
         </div>
-        <div id= "logo">
-            <img id= "logo_pic" src="{% static 'sit/images/th.jpg' %}" alt= "Picture of the logo">
+        <div id="logo">
+            <img id="logo_pic" src="{% static 'sit/images/th.jpg' %}" alt="Picture of the logo">
         </div>
 
-        <div id= "profile_picture">
-            <img id= "profile"  src= "{% static 'sit/images/roster_pic.jpg' %}" alt="profile picture">
+        <div id="profile_picture">
+            <img id="profile" src="/static/sit/images/{{sitter.id}}.jpg" alt="profile picture">
         </div>
 
-        <div id="back_button" onclick="goBack()">
-            <a href="\">&lang; Back</a>
+
+        <div id="Hello_name">
+            <h2>Hello {{ sitter.babysitter_fname }}!</h2>
         </div>
 
-        <div id= "Hello_name">
-            <h2>Hello sitter.id</h2>
-        </div>
-
-        <div id= "Pending_job" class= "job_box">
-            <div id= "PJbox"  onclick="hideElem()">
-                <span class= box_text>Bob & Joe</span> 
-                <span class= sub_text> October 31, 2019</span> 
-            </div>
+        <div id="Pending_job" class="job_box">
             <h4> Pending job offers available for you</h4>
+            <div class="container">
+
+
+                {% for job in pending %}
+                <a href="/pickup/{{job.id}}/{{sitter.id}}">
+                    <div id="PJbox">
+                        <br><span class=box_text>{{ job }}</span><br>
+                        <span class=sub_text style="font-family: raleway">{{job.datetime_start}}</span>
+                    </div>
+                </a>
+                {% endfor %}
+
+
+
+
+            </div>
+            <div id="Accepted_job" class="job_box">
+                <h4>Accepted job offers</h4>
+                <div class="container">
+
+                    {% for job in accepted %}
+                    <a href="/{{job.id}}/{{sitter.id}}"><div id="AJbox">
+                        <img id="icon" src="/static/sit/images/{{sitter.id}}.jpg" alt="profile picture">
+                        <br><span class=box_text>{{ job }}</span>
+                        <br><span class=sub_text>{{ job.datetime_start }}</span>
+                    </div></a>
+                    {% endfor %}
+                    
+                </div>
+                
+                <div id="Past_job" class="job_box">
+                    <h4>Past jobs</h4>
+                    <div class="container">
+
+                    {% for job in past%}
+                    <a href="/{{job.id}}/{{sitter.id}}">
+                        <div id="PaJbox">
+                                <img id="icon" src="/static/sit/images/{{sitter.id}}.jpg" alt="profile picture">
+                                <br><span class=box_text>{{ job }}</span>
+                                <br><span class=sub_text>{{ job.datetime_start }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <div id= "Accepted_job" class= "job_box">
-            <div id= "AJbox">
-                <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture">
-                <span class= box_text> Bob & Joe</span>
-                <span class= sub_text> October 31, 2019</span> 
-            </div>
-            <h4>Accepted job offers</h4>
-        </div>
-
-        <div id= "Past_job" class= "job_box">
-            <div id= "PaJbox">
-                    <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture"> 
-                    <span class= box_text> Bob & Joe</span>  
-                    <span class= sub_text> October 31, 2019</span> 
-            </div>
-            <h4>Past jobs</h4>
-        </div>
     </div>
-    <div id="profile_information_title" class = "hidden" >
-            <div id ="title">
-                <p> Job Offer</p>
-                <img class = "back_login" src = "{% static 'sit/images/logout.png' %}" onclick="exit()"></a>
-            </div>
-            <div id ="read">
-                <p>Tyler,Wyatt,Cathalina,Soraya & Jayda</p>
-            </div>
-            
-            
-            <ul id = "profile" >           
-            
-                <li >Name <span class = "text1">Anne Dupont</span></li>
-                <br>
-                <li >Email <span class = "text1">anne.dupont@gmail.com</span></li>
-                <br>
-                <li >Hotel or venue address <span class = "text1">Hotel Park City</span></li>
-                <br>
-                <li >From <span class = "text1">Thursday,October 16 - 11AM</span></li>
-                <br>
-                <li >To <span class = "text1">Thursday,October 16 - 11AM</span></li>
-                <br>
-                <li >Children <span class = "text1">Lisa 3 years old<br> Weston 5 years old</span></li>
-                <br>
-                <li >Important details yo know <span class = "text1">None</span></li>
-                <br>
 
-        
-        </ul>
-            
-                <input type="submit" class="submit1" value="Submit"onclick = "exit()" >
-            </a>
-        
 
+
+
+    <div id="profile_information_title" class="hidden">
+        <div id="title">
+            <p> Job Offer</p>
+            <img class="back_login" src="logout.png" onclick="exit()"></a>
         </div>
-        
-        
-        <script>
-            function exit() {
-              document.getElementById("profile_information_title").classList.add("hidden"); 
-              document.getElementById("whole").classList.remove("background"); 
-                }
-            function hideElem() {
-              document.getElementById("profile_information_title").classList.remove("hidden"); 
-              document.getElementById("whole").classList.add("background"); 
-                }
-            function hidElem() {
-              document.getElementById("error").classList.add("hidden"); 
-              document.getElementById("whole").classList.remove("background"); 
-                }
-            
-            
-            
-            
-            
-            </script>
-    </body>
+        <div id="read">
+            <p>Tyler,Wyatt,Cathalina,Soraya & Jayda</p>
+        </div>
+
+
+        <ul id="profile">
+
+            <li>Name <span class="text1">Anne Dupont</span></li>
+            <br>
+            <li>Email <span class="text1">anne.dupont@gmail.com</span></li>
+            <br>
+            <li>Hotel or venue address <span class="text1">Hotel Park City</span></li>
+            <br>
+            <li>From <span class="text1">Thursday,October 16 - 11AM</span></li>
+            <br>
+            <li>To <span class="text1">Thursday,October 16 - 11AM</span></li>
+            <br>
+            <li>Children <span class="text1">Lisa 3 years old<br> Weston 5 years old</span></li>
+            <br>
+            <li>Important details yo know <span class="text1">None</span></li>
+            <br>
+
+
+        </ul>
+
+        <input type="submit" class="submit1" value="Submit" onclick="exit()">
+        </a>
+
+
+    </div>
+
+
+    <script>
+        function exit() {
+            document.getElementById("profile_information_title").classList.add("hidden");
+            document.getElementById("whole").classList.remove("background");
+        }
+        function hideElem() {
+            document.getElementById("profile_information_title").classList.remove("hidden");
+            document.getElementById("whole").classList.add("background");
+        }
+        function hidElem() {
+            document.getElementById("error").classList.add("hidden");
+            document.getElementById("whole").classList.remove("background");
+        }
+
+
+
+
+
+    </script>
+</body>
+
 </html>

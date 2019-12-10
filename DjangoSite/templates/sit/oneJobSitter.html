@@ -1,13 +1,12 @@
 {% load static %}
 
 <head>
-    <title>Pick up Job</title>
+    <title>{{ job }}</title>
     <link rel="stylesheet" href="{% static 'sit/fontstyle.css' %}">
     <link rel="stylesheet" href="{% static 'sit/general.css' %}">
 </head>
 
 <body>
-
     <div id="header">
         <a href="/" id="logoutImg">Logout</a>
     </div>
@@ -18,16 +17,7 @@
         <a href="/sitterHome/{{sitter.id}}">&lang; Back</a>
     </div>
 
-
-
-
-
-
     <div id="else">
-
-        <h3>Hello {{ sitter.babysitter_fname }}</h3>
-
-
         <h1>{{ job }}</h1>
         <ul>
             <li>Location: {{job.location}}</li>
@@ -37,21 +27,12 @@
             <li>Assigned to: {{ job.sitter }}</li>
             {% for child in children %}
             <li>Child: {{child.child_firstname}}, who is {{child.child_age_years}} years and {{child.child_age_months}}
-                months old</li>
+                months
+                old</li>
             {% endfor %}
+
         </ul>
-
-        <br><br><br><br><br>
-
-        {% if not job.sitter %}
-        <p>This job is available. Take it?</p>
-        <p>Warning: you will not be able to undo this. You will be responsible for this job.</p>
-        <form action='/pickup/{{ job.id }}/{{ sitter.id }}' method='post'>
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input type="submit" value="Take this Job" class="submit">
-        </form>
-
-        {% endif %}
-
     </div>
+
+
+</body>

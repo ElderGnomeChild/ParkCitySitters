@@ -27,13 +27,17 @@ def profiles(request, sitter_id):
     # jobs = Job.objects.get(sitter=sitter)
     return render(request, 'sit/profiles.html', {'sitter':sitter, 'langs':langs, 'jobs':jobs, 'now':now})
 
-def sitterHome(request):
-    return render(request, 'sit/sitterHome.html')
 
 def showJobTest(request, job_id):
     job = get_object_or_404(Job, pk=job_id)
     children = job.child.all()
     return render(request, 'sit/oneJobTest.html', {'job':job, 'children':children})
+
+def showJobSitter(request, job_id, sitter_id):
+    job = get_object_or_404(Job, pk=job_id)
+    sitter = get_object_or_404(Babysitter, pk=sitter_id)
+    children = job.child.all()
+    return render(request, 'sit/oneJobSitter.html', {'job':job, 'children':children, 'sitter':sitter})
 
 def pickupJob(request, job_id, sitter_id):
         job = get_object_or_404(Job, pk=job_id)
@@ -48,14 +52,16 @@ def pickupJob(request, job_id, sitter_id):
                                 
                                 j.sitter = sitter
                                 j.save()
-                                return HttpResponseRedirect('/sitterHome')
+                                return HttpResponseRedirect('/pcs/sitterHome/' + sitter.id.__str__())
+
+                else:
+                        form = GetJob(initial={'job': job, 'sitter': sitter})
+                        return render(request, 'sit/pickupJob.html', {'job':job, 'children':children, 'sitter':sitter, 'form':form})
         else:
                 form = GetJob(initial={'job': job, 'sitter': sitter})
                 return render(request, 'sit/pickupJob.html', {'job':job, 'children':children, 'sitter':sitter, 'form':form})
 
 
-def confirm(request, job_id, sitter_id):
-        pass
 
 
 def availableJobs(request, sitter_id):
@@ -89,7 +95,7 @@ def addClient(request):
             phone = form.cleaned_data['client_phone']
             c = Client(client_name=name, client_phone=phone)
             c.save()
-            return HttpResponseRedirect('/adminHome')
+            return HttpResponseRedirect('/pcs/childform')
 
     else:
         form = ClientForm()
@@ -108,7 +114,7 @@ def addChild(request):
 
                         child = Child(child_firstname=name, child_age_years=yrs, child_age_months=mons, child_allergies=allergies, child_parent=parent)
                         child.save()
-                        return HttpResponseRedirect('/client/' + parent.id.__str__())
+                        return HttpResponseRedirect('/pcs/client/' + parent.id.__str__())
         else:
                 form = ChildForm()
                 return render(request, 'sit/childForm.html', {'form':form})
@@ -139,7 +145,7 @@ def addjob(request):
                         for ch in child:
                                 j.child.add(ch)
                         # j.save()
-                        return HttpResponseRedirect('/childform')
+                        return HttpResponseRedirect('/pcs/adminHome')
 
         else:
                 form = JobForm()
@@ -201,8 +207,31 @@ def adminHome(request):
                         sitters.append(s)
                         
         context= {'job_list':job_list, 'pending':pending, 'accepted':accepted, 'past':past, 'sitters':sitters, 'clients':clients  }
-        print(sitters)
+        # print(sitters)
         return render(request, 'sit/adminHome.html', context)
+
+
+def sitterHome(request, sitter_id):
+        sitter = get_object_or_404(Babysitter, pk=sitter_id)
+        job_list = Job.objects.order_by('id')
+        pending = []
+        accepted = []
+        past = []
+
+
+        for job in job_list:
+                if not job.is_old_job:
+                        if not job.sitter:
+                                pending.append(job)
+
+                        if job.sitter == sitter:
+                                accepted.append(job)
+
+                if job.is_old_job and job.sitter == sitter:
+                        past.append(job)
+
+        context= {'job_list':job_list, 'pending':pending, 'accepted':accepted, 'past':past, 'sitter':sitter}
+        return render(request, 'sit/sitterHome.html', context)
 
 
 def showClient(request, client_id):
