@@ -2,63 +2,134 @@
 
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Admin Homepage</title>
-        <link rel= "stylesheet" href ="{% static 'sit/adminHome.css' %}">
-    </head>
-    <body>
-            <div id= "header" >
-                    <a href= "/" id="logoutImg">Logout</a> 
-            </div>
-        <div id= "logo">
-            <img id= "logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder = "Picture of the logo">
-        </div>
-        <div id="back_button">
-            <a href="/">&lang; Back</a>
-        </div>
 
-        <div id= "Hello_name">
-            <h2>Hello, Rachel</h2>
-        </div>
+<head>
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="{% static 'sit/adminHome.css' %}">
+    <link rel="stylesheet" href="{% static 'sit/fontstyle.css' %}">
+</head>
 
-        <div id= "Pending_job" class= "job_box">
-            <a href="/pending"><div id= "PJbox">
-                    <span class= box_text>Pending Jobs</span> 
-                    <span class= sub_text></span> 
-            </div></a>
-             <div id= "add_new_job">
-                <a href="/addjob"><img id= "new_job" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>
-             </div>
-            <h4> Pending job offers</h4>
-        </div>
+<body>
+    <div id="header">
+        <a href="/" id="logoutImg">Logout</a>
+    </div>
+    <div id="logo">
+        <img id="logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder="Picture of the logo">
+    </div>
+    <div id="back_button">
+        <a href="/">&lang; Back</a>
+    </div>
 
-        <div id= "Accepted_job" class= "job_box">
-            <a href="/accepted"><div id= "AJbox">
-                    <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture">
-                    <span class= box_text>Accepted Jobs</span>
-                    <span class= sub_text></span> 
-           </div></a>
+    <div id="Hello_name">
+        <h2>Hello, Rachel</h2>
+    </div>
+
+    <div id="Pending_job" class="job_box">
+        <h4> Pending job offers</h4>
+        <div class="container">
+
+            <a href="/addjob">
+                <div id="PJbox">
+                    <img id="new_job" src="{% static 'sit/images/plus_sign.jpg' %}">
+                </div>
+            </a>
+            {% for job in pending %}
+            <a href="/{{ job.id }}">
+                <div id="PJbox">
+                    <span class=box_text><br><br>{{ job }}</span>
+                    <span class=box_text style="font-family: raleway"><br>{{ job.datetime_start }}</span>
+                    <span class=sub_text></span>
+                </div>
+            </a>
+            {% endfor %}
+            
+
+        </div>
+        <div id="Accepted_job" class="job_box">
             <h4>Accepted job offers</h4>
-        </div>
-        
-        <div id= "Past_job" class= "job_box">
-             <a href="/past"><div id= "PaJbox">
-                    <img id= "icon" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile picture"> 
-                    <span class= box_text>Past Jobs</span>  
-                    <span class= sub_text></span> 
-            </div></a>
-            <h4>Past job offers</h4>
+
+            <div class="container">
+
+                {% for job in accepted %}
+                <a href="/{{job.id}}">
+                    <div id="AJbox">
+                        <!-- <img id="icon" src="{% static 'sit/images/roster_pic.jpg' %}" alt="profile picture"> -->
+                        <img id="icon" src="/static/sit/images/{{job.sitter.id}}.jpg" alt="profile picture"
+                        onerror="this.src='/static/sit/images/user.jpg'"><br>
+                        <span class=box_text>{{ job }}</span>
+                        <span class=box_text style="font-family: raleway"><br>{{ job.datetime_start }}</span>
+                    </div>
+                </a>
+                {% endfor %}
+
+
+            </div>
+            <div id="Past_job" class="job_box">
+                <h4>Past job offers</h4>
+                <div class="container">
+
+                    {% for job in past %}
+                    <a href="/{{ job.id }}">
+                        <div id="PaJbox">
+                            <img id="icon" src="/static/sit/images/{{job.sitter.id}}.jpg" alt="profile picture"
+                            onerror="this.src='/static/sit/images/user.jpg'">
+                            <span class=box_text><br>{{ job }}</span>
+                            <span class=box_text style="font-family: raleway"><br>{{ job.datetime_start }}</span>
+                        </div>
+                    </a>
+                    {% endfor %}
+                </div>
+                <div id="babysitters" class="sitters">
+                    <h4> Babysitters</h4>
+                    <div class="container">
+
+                        <div id="add_new_sitter">
+                            <a href="/addsitters"><img id="add_sitter"
+                                src="{% static 'sit/images/plus_sign.jpg' %}"></a>
+                        </div>
+                            
+                            
+                        {% for sit in sitters %}
+                        <div id="the_sitters">
+                            <a href="/profile/{{sit.id}}"><img id="look_at_me" src="/static/sit/images/{{sit.id}}.jpg"
+                                alt="profile pictures of the sitters" onerror="this.src='/static/sit/images/user.jpg'"></a>
+                        </div>
+                        {% endfor %}
+
+                    </div>
+                    <div id="Clients" class="job_box">
+                        <h4>Clients</h4>
+                        <div class="container">
+                            <a href="/clientform">
+                                <div id="PJbox">
+                                    <img id="new_job" src="{% static 'sit/images/plus_sign.jpg' %}">
+                                </div>
+                            </a>
+
+                            {% for client in clients %}
+                            <a href="/">
+                                <div id="PaJbox">
+                                    <span class=box_text><br><br>{{ client }}</span>
+                                    <span class=sub_text></span>
+                                </div>
+                            </a>
+                            {% endfor %}
+
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <div id= "babysitters" class= "sitters">
-            <div id= "the_sitters">
-                <a href="/sitters"><img id= "look_at_me" src= "{% static 'sit/images/roster_pic.jpg' %}" alt= "profile pictures of the sitters"></a>
-                <span class= name>See sitters</span>
-            </div>
-            <div id= "add_new_sitter">
-                <a href="/addsitters"><img id= "add_sitter" src= "{% static 'sit/images/plus_sign.jpg' %}"></a>
-            </div>
-            <h4> Babysitters</h4>
-        </div>
-    </body>
+
+
+
+
+
+
+</body>
+
 </html>

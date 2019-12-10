@@ -32,7 +32,7 @@
   }
 
 body{
-    font-family: raleway, sans-serif;
+    font-family: raleway;
 }
 
 a{
@@ -42,7 +42,7 @@ a{
 
 #back_button{
     position: absolute;
-    font-family: ralewaySemi, sans-serif;
+    font-family: ralewaySemi;
     font-size:18;
     top:120px;
     left:25px;
@@ -52,9 +52,8 @@ a{
 #logo_pic{
     position: absolute;
     left: 30px;
-    height: 70px;
+    height: 50px;
     border-radius: 25px;
-    top: 10px;
 }
 
 #profile{
@@ -81,35 +80,44 @@ a{
 }
 
 #Pending_job{
-    position: absolute;
+    position: relative;
     height: 100px;
-    width: 100%;
+    width: 80%;
     top: 210px;
     left: 100px;
     padding-left: 20px;
 }
 
 #Accepted_job{
-    position: absolute;
+    position: relative;
     height: 100px;
     width: 100%;
-    top: 420px;
-    left:100px;
+    left: -20px;
     padding-left: 20px;
 }
 
 #Past_job{
-    position: absolute;
+    position: relative;
     height: 100px;
     width: 100%;
-    top: 630px;
-    left: 100px;
+    left: -20px;
+    
+    
     padding-left: 20px;
 }
-
+#Clients{
+    position: relative;
+    height: 100px;
+    width: 100%;
+    left: -20px;
+    
+    
+    padding-left: 20px;
+}
 #logoutImg {
     position: absolute;
-    width: 50px;
+    height: 25px;
+    width: 25px;
     top: 10px;
     right: 60px;
     color: #ffffff;
@@ -117,16 +125,20 @@ a{
 }
 
 #PJbox {
-    position: absolute;
-    font-family: railwayBold, sans-serif;
+    
+    /* font-family: railwayBold, sans-serif; */
+    font-family: ralewayBold;
     top: 60px;
     left: 200px;
     border-radius: 25px;
     height: 135px;
     width: 135px;
     box-shadow: 0px 0px 10px 5px #e6e6e6;
-    color: #FF6F61;
+    /* color: rgb(76, 36, 185); */
     text-align: center;
+    background-color: #FFFFFF;
+    color:#FF6F61;
+    margin: 5px;
 }
 
 #PJbox:hover{
@@ -134,8 +146,11 @@ a{
     color: #ffffff;
 }
 
+
+
+
 #new_job {
-    position: absolute;
+    
     top: 60px;
     left: 50px;
     border-radius: 25px;
@@ -145,8 +160,8 @@ a{
 }
 
 #AJbox {
-    position: absolute;
-    font-family: railwayBold, sans-serif;
+    
+    /* font-family: railwayBold, sans-serif; */
     text-align: center;
     top: 60px;
     left: 50px;
@@ -155,7 +170,10 @@ a{
     width: 135px;
     box-shadow: 0px 0px 10px 5px #e6e6e6;
     background-color: #FF6F61;
-    color: black;
+    text-decoration-color: black;
+    margin: 5px;
+    color:#39312C;
+    font-family: ralewayBold;
 }
 
 #AJbox:visited{
@@ -169,7 +187,7 @@ a{
 }
 
 #PaJbox {
-    position: absolute;
+    
     top: 60px;
     left: 50px;
     border-radius: 25px;
@@ -178,6 +196,8 @@ a{
     box-shadow: 0px 0px 10px 5px #e6e6e6;
     color: #ffffff;
     background-color: #39312c;
+    margin: 5px;
+    font-family: ralewayBold;
 }
 
 #PaJbox:hover {
@@ -186,16 +206,15 @@ a{
 }
 
 #babysitters{
-    position: absolute;
+    position: relative;
     height: 100px;
     width: 100%;
-    top: 840px;
-    left: 100px;
     padding-left: 20px;
+    left: -20px;
 }
 
 #add_sitter {
-    position: absolute;
+    
     height: 135px;
     top: 50px;
     left: 50px;
@@ -203,51 +222,68 @@ a{
 }
 
 #icon {
-    position: absolute;
-    right: -10px;
+    right: -20px;
     height: 40px;
+    width: 40px;
     top: -10px;
     border-radius: 50%;
 }
 
 .box_text {
-    position: absolute;
-    font-family: railwayBold, sans-serif;
-    font-size: 16px;
-    bottom: 20%;
-    left: 15px;
+    /* font-family: ralewayBold, sans-serif; */
+    font-size: 12px;
+    bottom: 0;
+    /* top:10px; */
+    position: relative;
+   
 }
 
 .sub_text {
-    position: absolute;
-    font-family: railwaySemi, sans-serif;
+    
+    bottom: 0;
+    font-family: ralewaySemi;
     font-size: 12px;
-    bottom: 10%;
+    
     left: 15px;
 }
 
 #look_at_me {
-    position: absolute;
+    
     height: 135px;
+    width: 135px;
     top: 50px;
     left: 200px;
     border-radius: 50%;
+    padding: 5px;
     
 
 }
 
 .name {
-    position: absolute;
     top: 200px;
-    padding-left: 210px;
-    font-family: railwaySemi, sans-serif;
+    padding-left: -50px;
+    font-family: ralewaySemi;
     font-size: 12px;
 }
+.container{
+    position: relative;
+
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content:flex-start;
+    margin-bottom: auto;
+    
+    
+    
+      
+}
+
 
 @media only screen and (max-width: 1000px){
     #Hello_name{
         position: absolute;
-        right: 30%;
+        /* right: 30%; */
         text-align: center;
         top: 130px; 
     }
@@ -271,22 +307,27 @@ a{
     }
 
     #Accepted_job{
-        top: 710px;
+        top: 100px;
         height: 310px;
     }
 
     #Past_job{
-        top: 1020px;
+        top: 100px;
         height: 310px; 
     }
 
     #babysitters{
-        top: 1350px;
+        top: 100px;
         height: 600px;
     }
 
+    #babysitters{
+        top: 100px;
+        height: 310px;
+    }
+
     #look_at_me {
-        height: 150px;
+        /* height: 150px; */
         padding: 5px;
     }
 
@@ -303,7 +344,7 @@ a{
     }
 
     #add_sitter{
-        height: 150px;
+        /* height: 150px; */
     }
 
     #new_job{

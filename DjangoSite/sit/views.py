@@ -19,9 +19,6 @@ def addsitters(request):
 # def addjob(request):
 #     return render(request, 'sit/addjob.html')
 
-def adminHome(request):
-    return render(request, 'sit/adminHome.html')
-
 def profiles(request, sitter_id):
     sitter = get_object_or_404(Babysitter, pk=sitter_id)
     jobs = Job.objects.all()
@@ -169,3 +166,32 @@ def pendingJobs(request):
     job_list= Job.objects.order_by('id')
     context= {'job_list':job_list}
     return render(request, 'sit/pendingJobs.html', context)
+
+
+def adminHome(request):
+        job_list= Job.objects.order_by('id')
+        
+        pending = []
+        accepted = []
+        past = []
+        sitters = []
+        clients = Client.objects.order_by('id')
+        
+        for job in job_list:
+                if not job.is_old_job:
+                        if not job.sitter:
+                                pending.append(job)
+
+                        if job.sitter:
+                                accepted.append(job)
+
+                if job.is_old_job:
+                        past.append(job)
+
+        for s in Babysitter.objects.order_by('id'):
+                if not s.is_superuser:
+                        sitters.append(s)
+                        
+        context= {'job_list':job_list, 'pending':pending, 'accepted':accepted, 'past':past, 'sitters':sitters, 'clients':clients  }
+        print(sitters)
+        return render(request, 'sit/adminHome.html', context)
