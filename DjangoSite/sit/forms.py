@@ -2,7 +2,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from .models import Babysitter, Job, Client, Child
 from django.contrib.admin import widgets  
-from datetimepicker.widgets import DateTimePicker
+# from datetimepicker.widgets import DateTimePicker
 
 class BabysitterCreationForm(UserCreationForm):
 
