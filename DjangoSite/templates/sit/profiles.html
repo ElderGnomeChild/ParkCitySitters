@@ -24,7 +24,7 @@
         <h1>Babysitter Profile</h1>
     </div>
     <div id="image">
-        <img class="leftbox" id="sitters" src="{% static 'sit/images/1.jpg' %}">
+        <img class="leftbox" id="sitters" src="/static/sit/images/{{sitter.id}}.jpg">
     </div>
     <div id="profile_name">
         <h1>{{ sitter.babysitter_fname }} {{ sitter.babysitter_lname }}</h1>

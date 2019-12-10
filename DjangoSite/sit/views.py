@@ -108,49 +108,57 @@ def addChild(request):
 
                         child = Child(child_firstname=name, child_age_years=yrs, child_age_months=mons, child_allergies=allergies, child_parent=parent)
                         child.save()
-                        return HttpResponseRedirect('/adminHome')
+                        return HttpResponseRedirect('/client/' + parent.id.__str__())
         else:
                 form = ChildForm()
                 return render(request, 'sit/childForm.html', {'form':form})
 
 def addjob(request):
-    if request.method == 'POST':
-        form = JobForm(request.POST)
-        if form.is_valid():
-                client = form.cleaned_data['client']
-                child = form.cleaned_data['child']
-                location = form.cleaned_data['location']
-                num_child = form.cleaned_data['num_child']
-                datetime_start = form.cleaned_data['datetime_start']
-                datetime_end = form.cleaned_data['datetime_end']
+        children = Child.objects.all()
+        child = []
+        if request.method == 'POST':
+                form = JobForm(request.POST)
+                if form.is_valid():
+                        client = form.cleaned_data['client']
+                        for c in children:
+                                if c.child_parent == client:
+                                        child.append(c)
+                        location = form.cleaned_data['location']
+                        num_child = len(child)
+                        datetime_start = form.cleaned_data['datetime_start']
+                        datetime_end = form.cleaned_data['datetime_end']
 
 
-                if form.cleaned_data['sitter']:
-                        sitter = form.cleaned_data['sitter']
+                        
                         j = Job(client=client, location=location, num_child=num_child,
-                        datetime_start=datetime_start, datetime_end=datetime_end, sitter=sitter)
-                        # j.child.add(child)
-                else:
-                        j = Job(client=client, child=child, location=location, num_child=num_child,
                         datetime_start=datetime_start, datetime_end=datetime_end)
                         # j.child.add(child)
 
-                j.save()
-                j = Job.objects.get(location=location, num_child=num_child, client=client, datetime_start=datetime_start)
-                for ch in child:
-                        j.child.add(ch)
-                # j.save()
-                return HttpResponseRedirect('/adminHome')
+                        j.save()
+                        j = Job.objects.get(location=location, num_child=num_child, client=client, datetime_start=datetime_start)
+                        for ch in child:
+                                j.child.add(ch)
+                        # j.save()
+                        return HttpResponseRedirect('/childform')
 
-    else:
-        form = JobForm()
-        
-        return render(request, 'sit/addjob.html', {'form':form})
+        else:
+                form = JobForm()
+                
+                return render(request, 'sit/addjob.html', {'form':form})
 
 def seeSitters(request):
     sit_list= Babysitter.objects.order_by('id')
     context= {'sit_list':sit_list}
     return render(request, 'sit/sitters.html', context)
+
+def sitterLog(request):
+        sit_list= Babysitter.objects.order_by('id')
+        slist=[]
+        for s in sit_list:
+                if not s.is_superuser:
+                        slist.append(s)
+        context= {'sitters':slist}
+        return render(request, 'sit/sitter.html', context)
 
 def pastJobs(request):
     job_list= Job.objects.order_by('id')

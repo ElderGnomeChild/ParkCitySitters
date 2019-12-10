@@ -22,5 +22,6 @@ urlpatterns = [
     path('available/<int:sitter_id>', views.availableJobs, name="available"),
     path('pickup/<int:job_id>/<int:sitter_id>', views.pickupJob, name="pickup"),
     path('client/<int:client_id>', views.showClient, name='client'),
+    path('login', views.sitterLog, name='sitlog'),
 ]
 # urlpatterns += staticfiles_urlpatterns()

@@ -1,7 +1,7 @@
 {% load static %}
 
 <head>
-    <title>{{client.client_name}}</title>
+    <title>Sitter Login</title>
     <link rel="stylesheet" href="{% static 'sit/fontstyle.css' %}">
     <link rel="stylesheet" href="{% static 'sit/general.css' %}">
 </head>
@@ -14,20 +14,16 @@
     <div id="logo">
         <img id="logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder="Picture of the logo">
     </div>
-    <div id="back_button">
+    <!-- <div id="back_button">
         <a href="/adminHome">&lang; Back</a>
-    </div>
+    </div> -->
 
     <div id="else">
-        <h2>Client: {{client.client_name}}</h2>
+        <h2>Log in as who?</h2>
         <ul>
-            <li>Phone Number: {{client.client_phone}}</li>
-            {% for child in children%}
-            <li>Child: {{child}}</li>
+            {% for sitter in sitters%}
+            <li><a href="/sitterHome/{{sitter.id}}">{{ sitter }}</a></li>
             {% endfor %}
         </ul>
-        <a href="/childform">Add Child</a>
-
-        
     </div> 
 </body>

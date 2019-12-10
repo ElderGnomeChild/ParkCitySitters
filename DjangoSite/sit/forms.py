@@ -31,12 +31,12 @@ class ChildForm(forms.Form):
 
 class JobForm(forms.Form):
     client = forms.ModelChoiceField(Client.objects.all(), label='Client')
-    num_child = forms.IntegerField(max_value=10, min_value=1, label='Number of Children')
-    child = forms.ModelMultipleChoiceField(Child.objects.all(), label='Children')
+    # num_child = forms.IntegerField(max_value=10, min_value=1, label='Number of Children')
+    # child = forms.ModelMultipleChoiceField(Child.objects.all(), label='Children')
     location = forms.CharField(max_length=50, label='Location')
     datetime_start = forms.SplitDateTimeField( label='Job Start')
     datetime_end = forms.SplitDateTimeField(label='Job End')
-    sitter = forms.ModelChoiceField(Babysitter.objects.all(), label='Babysitter (optional)', required=False)
+    # sitter = forms.ModelChoiceField(Babysitter.objects.all(), label='Babysitter (optional)', required=False)
     
 class GetJob(forms.Form):
     job = forms.ModelChoiceField(Job.objects.all(), label="job", widget=forms.HiddenInput())
