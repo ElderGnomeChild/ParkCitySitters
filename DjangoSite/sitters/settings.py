@@ -34,7 +34,6 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'sit.apps.SitConfig',
-    # 'datetimepicker',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
