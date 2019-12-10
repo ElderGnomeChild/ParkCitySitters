@@ -195,3 +195,13 @@ def adminHome(request):
         context= {'job_list':job_list, 'pending':pending, 'accepted':accepted, 'past':past, 'sitters':sitters, 'clients':clients  }
         print(sitters)
         return render(request, 'sit/adminHome.html', context)
+
+
+def showClient(request, client_id):
+        client = get_object_or_404(Client, pk=client_id)
+        childset = Child.objects.all()
+        children = []
+        for child in childset:
+                if child.child_parent == client:
+                        children.append(child)
+        return render(request, 'sit/client.html', {'client':client, 'children':children})

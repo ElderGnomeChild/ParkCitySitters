@@ -16,9 +16,9 @@
     <div id="logo">
         <img id="logo_pic" src="{% static 'sit/images/th.jpg' %}" placeholder="Picture of the logo">
     </div>
-    <div id="back_button">
+    <!-- <div id="back_button">
         <a href="/">&lang; Back</a>
-    </div>
+    </div> -->
 
     <div id="Hello_name">
         <h2>Hello, Rachel</h2>
@@ -107,7 +107,7 @@
                             </a>
 
                             {% for client in clients %}
-                            <a href="/">
+                            <a href="/client/{{client.id}}">
                                 <div id="PaJbox">
                                     <span class=box_text><br><br>{{ client }}</span>
                                     <span class=sub_text></span>
