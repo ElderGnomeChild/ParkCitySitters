@@ -54,8 +54,8 @@
                 <a href="/{{job.id}}">
                     <div id="AJbox">
                         <!-- <img id="icon" src="{% static 'sit/images/roster_pic.jpg' %}" alt="profile picture"> -->
-                        <img id="icon" src="/static/sit/images/{{job.sitter.id}}.jpg" alt="profile picture"
-                        onerror="this.src='/static/sit/images/user.jpg'"><br>
+                        <img id="icon" src="/pcs/static/sit/images/{{job.sitter.id}}.jpg" alt="profile picture"
+                        onerror="this.src='/pcs/static/sit/images/user.jpg'"><br>
                         <span class=box_text>{{ job }}</span>
                         <span class=box_text style="font-family: raleway"><br>{{ job.datetime_start }}</span>
                     </div>
@@ -71,8 +71,8 @@
                     {% for job in past %}
                     <a href="/{{ job.id }}">
                         <div id="PaJbox">
-                            <img id="icon" src="/static/sit/images/{{job.sitter.id}}.jpg" alt="profile picture"
-                            onerror="this.src='/static/sit/images/user.jpg'">
+                            <img id="icon" src="/pcs/static/sit/images/{{job.sitter.id}}.jpg" alt="profile picture"
+                            onerror="this.src='/pcs/static/sit/images/user.jpg'">
                             <span class=box_text><br>{{ job }}</span>
                             <span class=box_text style="font-family: raleway"><br>{{ job.datetime_start }}</span>
                         </div>
@@ -91,8 +91,8 @@
                             
                         {% for sit in sitters %}
                         <div id="the_sitters">
-                            <a href="/profile/{{sit.id}}"><img id="look_at_me" src="/static/sit/images/{{sit.id}}.jpg"
-                                alt="profile pictures of the sitters" onerror="this.src='/static/sit/images/user.jpg'"></a>
+                            <a href="/profile/{{sit.id}}"><img id="look_at_me" src="/pcs/static/sit/images/{{sit.id}}.jpg"
+                                alt="profile pictures of the sitters" onerror="this.src='/pcs/static/sit/images/user.jpg'"></a>
                         </div>
                         {% endfor %}
 
