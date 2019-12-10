@@ -38,3 +38,6 @@ class JobForm(forms.Form):
     datetime_end = forms.SplitDateTimeField(label='Job End')
     sitter = forms.ModelChoiceField(Babysitter.objects.all(), label='Babysitter (optional)', required=False)
     
+class GetJob(forms.Form):
+    job = forms.ModelChoiceField(Job.objects.all(), label="job", widget=forms.HiddenInput())
+    sitter = forms.ModelChoiceField(Babysitter.objects.all(), label="sitter", widget=forms.HiddenInput())

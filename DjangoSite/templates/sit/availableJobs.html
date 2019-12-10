@@ -4,7 +4,7 @@ Hi {{ sitter.babysitter_fname }}. You are available for these Jobs.
     <ul>
     {% for job in job_list %}
 
-        <li><a href="/{{ job.id }}">{{ job }}</a></li>
+        <li><a href="/pickup/{{ job.id }}/{{ sitter.id }}">{{ job }}</a></li>
     
     {% endfor %}
     </ul>

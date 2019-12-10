@@ -1,3 +1,6 @@
+<h3>Hello {{ sitter.babysitter_fname }}</h3>
+
+
 <h1>{{ job }}</h1>
 <ul>
     <li>Location: {{job.location}}</li>
@@ -10,6 +13,15 @@
     {% endfor %}
 </ul>
 
-<p>This job is available. Take it?</p>
-<button onclick="{{ job.sitter=sitter}}">Take Job</button>
+<br><br><br><br><br>
 
+{% if not job.sitter %}
+<p>This job is available. Take it?</p>
+<p>Warning: you will not be able to undo this. You will be responsible for this job.</p>
+<form action='/pickup/{{ job.id }}/{{ sitter.id }}' method='post'>
+{% csrf_token %}
+{{ form.as_p }}
+<input type="submit" value="Take this Job" class="submit">
+</form>
+
+{% endif %}

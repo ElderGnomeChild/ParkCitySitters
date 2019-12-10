@@ -3,7 +3,7 @@ from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.template import Context, loader
 from .models import Job, Child, Babysitter, Client
 import datetime
-from .forms import ClientForm, JobForm, ChildForm
+from .forms import ClientForm, JobForm, ChildForm, GetJob
 
 # Create your views here.
 
@@ -39,10 +39,26 @@ def showJobTest(request, job_id):
     return render(request, 'sit/oneJobTest.html', {'job':job, 'children':children})
 
 def pickupJob(request, job_id, sitter_id):
-    job = get_object_or_404(Job, pk=job_id)
-    sitter = Babysitter.objects.get(pk=sitter_id)
-    children = job.child.all()
-    return render(request, 'sit/oneJobTest.html', {'job':job, 'children':children})
+        job = get_object_or_404(Job, pk=job_id)
+        sitter = get_object_or_404(Babysitter, pk=sitter_id)
+        children = job.child.all()
+
+        if request.method == 'POST':
+                form = GetJob(request.POST)
+                j = get_object_or_404(Job, pk=job_id)
+                if not j.sitter:
+                        if form.is_valid:
+                                
+                                j.sitter = sitter
+                                j.save()
+                                return HttpResponseRedirect('/sitterHome')
+        else:
+                form = GetJob(initial={'job': job, 'sitter': sitter})
+                return render(request, 'sit/pickupJob.html', {'job':job, 'children':children, 'sitter':sitter, 'form':form})
+
+
+def confirm(request, job_id, sitter_id):
+        pass
 
 
 def availableJobs(request, sitter_id):
