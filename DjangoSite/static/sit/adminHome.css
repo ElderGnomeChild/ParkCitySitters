@@ -259,15 +259,15 @@ a{
     }
 
     #PJbox{
-        height: 150px;
+        /* height: 150px; */
     }
 
     #AJbox{
-        height: 150px;
+        /* height: 150px; */
     }
 
     #PAJbox{
-        height: 150px;
+        /* height: 150px; */
     }
 
     #Accepted_job{
@@ -307,7 +307,7 @@ a{
     }
 
     #new_job{
-        height: 150px;
+        /* height: 150px; */
     }
 
     #logo_pic{
